@@ -1,0 +1,49 @@
+#include "date_info.h"
+#include <iostream>
+using namespace std;
+
+void init_leap_year(){
+	int res;
+	for(int i = 1858; i < 2559; i++){
+		if(i%4){
+			leap_year_gregorian[i-1858] = 0; //1 = skåttår
+			leap_year_julian[i-1858] = 0;
+		}
+		else{
+			leap_year_gregorian[i-1858] = 1; //1 = skåttår
+			leap_year_julian[i-1858] = 1;
+		}
+	}
+	
+	leap_year_gregorian[1900-1858] = 0;
+	leap_year_gregorian[2100-1858] = 0;
+	leap_year_gregorian[2200-1858] = 0;
+	leap_year_gregorian[2300-1858] = 0;
+	leap_year_gregorian[2500-1858] = 0;
+}
+
+void init_year_sd(){
+	int gregorian_day = 0;
+	int julian_day = 0;
+
+	int year = 1858;
+
+	for(int i = 1858; i < 2559;i++){
+		year_sd_gregorian[i-1858] = gregorian_day;
+		year_sd_julian[i-1858] = julian_day;
+
+		gregorian_day += 365;
+		julian_day += 365;
+		if(leap_year_gregorian[i])
+			gregorian_day += 1;
+		if(leap_year_julian[i])
+			julian_day += 1;
+	}	
+}
+
+int main(){
+i	init_leap_year();
+	init_year_sd();
+
+	return 0;
+}
