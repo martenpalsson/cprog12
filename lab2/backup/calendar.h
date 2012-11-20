@@ -1,8 +1,6 @@
 #ifndef CALENDAR_H
 #define CALENDAR_H
 #include "date.h"
-#include "julian.h"
-#include "gregorian.h"
 #include <map>
 #include <string>
 #include <iostream>
@@ -31,7 +29,8 @@ struct Calendar{
 		events.clear();
 		today = cal.today;
 		for(auto it = cal.events.begin(); it != cal.events.end(); it++){
-			events.insert({it->first, it->second});
+			D tmp = it->first;
+			events.insert(it, pair<D,string>(tmp, it->second));
 		}
 	}
 
@@ -42,7 +41,8 @@ struct Calendar{
 		events.clear();
 		today = cal.today;
 		for(auto it = cal.events.begin(); it != cal.events.end(); it++){
-			events.insert({it->first, it->second});
+			D tmp = it->first;
+			events.insert(it, pair<Date,string>(tmp, it->second));
 		}
 		return *this;
 	}	
@@ -70,11 +70,11 @@ struct Calendar{
 	}
 
 	bool add_event(string event, int day){
-		return add_event(event, day, today.month(), today.year());
+		return add_event(event);
 	}
 
 	bool add_event(string event, int day, int month){
-		return add_event(event, day, month, today.year());
+		return add_event(event);
 	}
 
 	bool add_event(string event, int day, int month, int year){
@@ -82,9 +82,13 @@ struct Calendar{
 			D d(year,month,day);
 
 			for(auto it = events.find(d); it != events.end(); it++){
+				if(it->first != today){
+					return true;
+				}
 				if(it->second == event)
 					return false;
 			}
+
 			events.insert(pair<D, string>(d,event));
 		} catch(out_of_range){
 			return false;
@@ -97,6 +101,9 @@ struct Calendar{
 			D d(year,month,day);
 
 			for(auto it = events.find(d); it != events.end(); it++){
+				if(it->first != today){
+					return false;
+				}
 				if(it->second == event){
 					events.erase(it);
 					return true;
@@ -109,11 +116,11 @@ struct Calendar{
 	}
 	
 	bool remove_event(string event, int day, int month){
-		return remove_event(event,day,month,today.year());
+		return remove_event(event);
 	}
 	
 	bool remove_event(string event, int day){
-		return remove_event(event, day, today.month(), today.year());
+		return remove_event(event);
 	}
 	bool remove_event(string event){
 		for(auto it = events.find(today); it != events.end(); it++){
@@ -126,17 +133,9 @@ struct Calendar{
 		}
 		return false;
 	}
+
+
+
 };
-
-template <typename D>
-ostream & operator<<(ostream & os, const Calendar<D> & cal){
-	auto it = cal.events.find(cal.today);
-	++it;
-	for(; it != cal.events.end(); ++it){
-		os << it->first << " : " << it->second << endl;
-	}
-
-	return os;
-}
 }
 #endif

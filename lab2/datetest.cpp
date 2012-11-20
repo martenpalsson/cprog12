@@ -227,7 +227,7 @@ int main()
 
 		/* Calendar tests. */
 		Calendar<Gregorian> hogtider;
-
+		Calendar<Gregorian> j2;
 		/* Invalid events (dates actually) */
 		assert(hogtider.set_date(2001, 2, 29) == false);
 		assert(hogtider.add_event("skottdag", 29, 2, 2001) == false);
@@ -246,13 +246,17 @@ int main()
 		assert(true == hogtider.remove_event("jultomten", 24, 12));
 		assert(true == hogtider.add_event("jultomten", 24, 12));
 
+		cout << "SKRIVER UT KALENDERN" << endl; 
 		ostringstream ss;
-		//ss << hogtider << std::endl;
-		//assert(string("2012-12-24 : lunch\n2012-12-24 : kalle anka\n2012-12-24 : jultomten\n2012-12-25 : julbord\n\n") == ss.str());
+		cout << hogtider << endl;
+		ss << hogtider << endl;
+		assert(string("2012-12-24 : lunch\n2012-12-24 : kalle anka\n2012-12-24 : jultomten\n2012-12-25 : julbord\n\n") == ss.str());
 		Calendar<Gregorian> ab = Calendar<Gregorian>();
-		Calendar<Gregorian> andra_tider = hogtider;
-	//	Calendar<Julian> andra_tider = hogtider;
-
+		Calendar<Gregorian> ac(hogtider);
+		Calendar<Gregorian> ad = hogtider;
+		Calendar<Julian> andra_tider;
+		andra_tider = hogtider;
+		j2 = hogtider;
 		//End calender tests
 	}
 
