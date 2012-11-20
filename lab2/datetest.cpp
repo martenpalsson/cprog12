@@ -260,6 +260,25 @@ int main()
 		Calendar<Julian> ja = hogtider;
 		Calendar<Julian> jb(hogtider);
 		
+		
+		{
+			Gregorian g1(2012,12,24);
+			Julian j1(2012,12,11);
+			assert(g1.mod_julian_day() == j1.mod_julian_day());
+			Julian j2 = g1;
+			assert(j2 == j1);
+			Gregorian g2 = j1;
+			cout << "g2: " << g2 << endl;
+			cout << "j2: " << j2 << endl;
+			cout << "j1: " << j1 << endl;
+			cout << "g1: " << g1 << endl; 
+			assert(g2 == g1);
+
+		}
+		
+		
+		
+		
 		ostringstream ss2;
 		ss2 << ja << endl;
 		assert(string("2012-12-11 : lunch\n2012-12-11 : kalle anka\n2012-12-11 : jultomten\n2012-12-12 : julbord\n\n") == ss2.str());
@@ -267,9 +286,13 @@ int main()
 		ostringstream ss3;
 		ss3 << jb << endl;
 		assert(string("2012-12-11 : lunch\n2012-12-11 : kalle anka\n2012-12-11 : jultomten\n2012-12-12 : julbord\n\n") == ss3.str());
-		j2 = hogtider;
-
+		
+		Calendar<Gregorian> g3 = jb;
+		cout << endl << g3 << endl;
 		cout << andra_tider << endl;
+		ostringstream ss4;
+		ss4 << g3 << endl;
+		assert(string("2012-12-24 : lunch\n2012-12-24 : kalle anka\n2012-12-24 : jultomten\n2012-12-25 : julbord\n\n") == ss4.str());
 		//End calender tests
 	}
 

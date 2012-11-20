@@ -55,16 +55,9 @@ struct Calendar{
 
 	//4 event versioner
 	bool add_event(string event){
-		for(auto it = events.find(today); it != events.end(); ++it){
-			if(it->first != today){
-				break;
-			}
-			if(it->second == event)
-				return false;
-		}
-		events.insert({today, event});
-		return true;
+		return add_event(event, today.day(), today.month(), today.year());
 	}
+
 
 	bool add_event(string event, int day){
 		return add_event(event, day, today.month(), today.year());
@@ -91,6 +84,10 @@ struct Calendar{
 			return false;
 		} 
 		return true;
+	}
+
+	bool remove_event(string event){
+		return remove_event(event, today.day(), today.month(), today.year());
 	}
 
 	bool remove_event(string event, int day){
@@ -121,18 +118,6 @@ struct Calendar{
 	}
 	
 	
-	bool remove_event(string event){
-		for(auto it = events.find(today); it != events.end(); ++it){
-			if(it->first != today){
-				break;
-			}
-			if(it->second == event){
-				events.erase(it);
-				return true;
-			}
-		}
-		return false;
-	}
 };
 
 template <typename D>

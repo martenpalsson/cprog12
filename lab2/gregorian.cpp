@@ -38,21 +38,13 @@ Gregorian::Gregorian(int year, int month, int day){
 }
 
 Gregorian::Gregorian(const Date & date){
-	try{
-		JDN = date.mod_julian_day();
-		JDN_to_date();
-	}catch(exception e){
-		throw out_of_range("constructor. d är null");
-	}
+	JDN = date.mod_julian_day();
+	JDN_to_date();
 }
 
 Gregorian::Gregorian(const Date * date){
-	try{
-		JDN = date->mod_julian_day();
-		JDN_to_date();
-	}catch(exception e){
-		throw out_of_range("constructor. d är null");
-	}
+	JDN = date->mod_julian_day();
+	JDN_to_date();
 }
 
 int Gregorian::mod_julian_day() const{
