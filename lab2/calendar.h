@@ -21,13 +21,11 @@ struct Calendar{
 	friend ostream & operator<<(ostream & os, const Calendar<T> & cal);
 	
 	Calendar<D>(){
-		cout << "DEFAULT" << endl;
 		today = D();
 	}
 
 	template <typename T>
 	Calendar<D>(const Calendar<T> & cal){
-		cout << "Copy construtor" << endl;
 		events.clear();
 		today = cal.today;
 		for(auto it = cal.events.begin(); it != cal.events.end(); it++){
@@ -38,7 +36,6 @@ struct Calendar{
 	//Tilldelning
 	template<typename T>
 	Calendar<D> & operator=(const Calendar<T> & cal){
-		cout << "Tilldelning" << endl;
 		events.clear();
 		today = cal.today;
 		for(auto it = cal.events.begin(); it != cal.events.end(); it++){
@@ -60,7 +57,7 @@ struct Calendar{
 	bool add_event(string event){
 		for(auto it = events.find(today); it != events.end(); it++){
 			if(it->first != today){
-				return true;
+				break;
 			}
 			if(it->second == event)
 				return false;
@@ -82,6 +79,8 @@ struct Calendar{
 			D d(year,month,day);
 
 			for(auto it = events.find(d); it != events.end(); it++){
+				if(it->first != d)
+					break;
 				if(it->second == event)
 					return false;
 			}
@@ -97,6 +96,9 @@ struct Calendar{
 			D d(year,month,day);
 
 			for(auto it = events.find(d); it != events.end(); it++){
+				if(it->first != d)
+					break;
+
 				if(it->second == event){
 					events.erase(it);
 					return true;
@@ -118,8 +120,8 @@ struct Calendar{
 	bool remove_event(string event){
 		for(auto it = events.find(today); it != events.end(); it++){
 			if(it->first != today)
-				return false;
-			else if(it->second == event){
+				break;
+			if(it->second == event){
 				events.erase(it);
 				return true;
 			}

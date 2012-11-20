@@ -257,6 +257,8 @@ int main()
 		Calendar<Julian> andra_tider;
 		andra_tider = hogtider;
 		j2 = hogtider;
+
+		cout << andra_tider << endl;
 		//End calender tests
 	}
 

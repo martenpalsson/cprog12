@@ -21,6 +21,6 @@ submission3: clean
 	
 	
 submission4: clean
-	python submit.py -f -p oldkattis:cprog09lab23 date.h julian.h julian.cpp gregorian.h gregorian.cpp kattistime.h kattistime.cpp cprog09lab22c.cpp vector.h calendar.h
+	python submit.py -f -p oldkattis:cprog09lab23 date.h julian.h julian.cpp gregorian.h gregorian.cpp kattistime.h kattistime.cpp cprog09lab23.cpp vector.h calendar.h
 	
 	
