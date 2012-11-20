@@ -241,6 +241,7 @@ int main()
 		hogtider.add_event("Halloween", 30, 10, 2012);
 		hogtider.add_event("jultomten", 24, 12);
 		hogtider.add_event("julbord", 25, 12);
+		assert(false == hogtider.remove_event("julbord", 24));
 		assert(false == hogtider.add_event("jultomten", 24, 12));
 
 		assert(true == hogtider.remove_event("jultomten", 24, 12));
@@ -256,6 +257,16 @@ int main()
 		Calendar<Gregorian> ad = hogtider;
 		Calendar<Julian> andra_tider;
 		andra_tider = hogtider;
+		Calendar<Julian> ja = hogtider;
+		Calendar<Julian> jb(hogtider);
+		
+		ostringstream ss2;
+		ss2 << ja << endl;
+		assert(string("2012-12-11 : lunch\n2012-12-11 : kalle anka\n2012-12-11 : jultomten\n2012-12-12 : julbord\n\n") == ss2.str());
+		
+		ostringstream ss3;
+		ss3 << jb << endl;
+		assert(string("2012-12-11 : lunch\n2012-12-11 : kalle anka\n2012-12-11 : jultomten\n2012-12-12 : julbord\n\n") == ss3.str());
 		j2 = hogtider;
 
 		cout << andra_tider << endl;
