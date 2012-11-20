@@ -55,14 +55,14 @@ struct Calendar{
 
 	//4 event versioner
 	bool add_event(string event){
-		for(auto it = events.find(today); it != events.end(); it++){
+		for(auto it = events.find(today); it != events.end(); ++it){
 			if(it->first != today){
 				break;
 			}
 			if(it->second == event)
 				return false;
 		}
-		events.insert(pair<D, string>(today,event));
+		events.insert({today, event});
 		return true;
 	}
 
@@ -78,16 +78,17 @@ struct Calendar{
 		try{
 			D d(year,month,day);
 
-			for(auto it = events.find(d); it != events.end(); it++){
-				if(it->first != d)
+			for(auto it = events.find(d); it != events.end(); ++it){
+				if(it->first != d){
 					break;
+				}
 				if(it->second == event)
 					return false;
 			}
-			events.insert(pair<D, string>(d,event));
+			events.insert({d, event});
 		} catch(out_of_range){
 			return false;
-		}
+		} 
 		return true;
 	}
 
@@ -96,9 +97,9 @@ struct Calendar{
 			D d(year,month,day);
 
 			for(auto it = events.find(d); it != events.end(); it++){
-				if(it->first != d)
+				if(it->first != d){
 					break;
-
+				}
 				if(it->second == event){
 					events.erase(it);
 					return true;
@@ -132,7 +133,8 @@ struct Calendar{
 
 template <typename D>
 ostream & operator<<(ostream & os, const Calendar<D> & cal){
-	auto it = cal.events.find(cal.today);
+	D d = cal.today;
+	auto it = cal.events.find(d);
 	++it;
 	for(; it != cal.events.end(); ++it){
 		os << it->first << " : " << it->second << endl;
