@@ -29,7 +29,6 @@ Julian::Julian(int year, int month, int day){
 	d = day;
 	JDN = mod_julian_day();
 }
-
 Julian::Julian(const Date & date){
 	JDN = date.mod_julian_day();
 	JDN_to_date();

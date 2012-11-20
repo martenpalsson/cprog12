@@ -6,6 +6,9 @@
 using namespace std;
 
 namespace lab2{
+
+class Julian;
+
 struct Gregorian: public Date {
 	static vector<string> day_names;
 	static vector<string> month_names;
@@ -13,9 +16,10 @@ struct Gregorian: public Date {
 	
 	Gregorian();
 	Gregorian(int year, int month, int day);
-	Gregorian(const Date & d);
-	Gregorian(const Date * d);
-	//Date & operator=(const Date & date);
+	Gregorian(const Julian & jul);
+	Gregorian(const Julian * jul);
+	Gregorian(const Date & date);
+	Gregorian(const Date * date);
 	int days_per_week() const;
 	int days_this_month() const;
 	int months_per_year() const;

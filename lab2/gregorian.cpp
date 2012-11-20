@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "gregorian.h"
+#include "julian.h"
 #include <time.h>
 #include <stdexcept>
 using namespace std;
@@ -35,6 +36,15 @@ Gregorian::Gregorian(int year, int month, int day){
 	}
 	d = day;
 	JDN = mod_julian_day();
+}
+Gregorian::Gregorian(const Julian & jul){
+	JDN = jul.mod_julian_day();
+	JDN_to_date();
+}
+
+Gregorian::Gregorian(const Julian * jul){
+	JDN = jul->mod_julian_day();
+	JDN_to_date();
 }
 
 Gregorian::Gregorian(const Date & date){
@@ -104,6 +114,7 @@ string Gregorian::month_name() const{
 }
 
 Date & Gregorian::add_year(int n){
+	JDN_to_date();//tester
 	if(d == 29 && m == 2 && leap_year(y)){ //leap day
 		if(leap_year(y+n)){
 			y += n;
@@ -121,6 +132,7 @@ Date & Gregorian::add_year(int n){
 }
 
 Date & Gregorian::add_month(int n){
+	JDN_to_date();//tester
 	if( n < 0){
 		remove_month(n);
 		return *this;
@@ -141,6 +153,7 @@ Date & Gregorian::add_month(int n){
 }
 
 void Gregorian::remove_month(int n){
+	JDN_to_date();//tester
 	for(;n<0;n++){
 		if(d > m_l(m-1)){
 			JDN -= 30;
@@ -170,6 +183,7 @@ int Gregorian::m_l(int n) const{
 }
 
 void Gregorian::add_single_month(){
+	JDN_to_date(); //tester
 	int month_length = m_l(m);
 	JDN += month_length;
 	JDN_to_date();

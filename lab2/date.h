@@ -12,6 +12,12 @@ protected:
 	int y;
 
 public:
+	Date & operator=(const Date & date){
+		JDN = date.mod_julian_day();
+		JDN_to_date();
+		return *this;
+	}
+
 	virtual int days_per_week() const =0;
 	virtual int days_this_month() const =0;
 	virtual int months_per_year() const =0;
@@ -21,11 +27,6 @@ public:
 	Date & operator--(){JDN--;JDN_to_date();return *this;};
 	Date & operator+=(int n){JDN+=n;JDN_to_date();return *this;};
 	Date & operator-=(int n){JDN-=n;JDN_to_date();return *this;};
-	Date & operator=(const Date & date){
-		JDN = date.mod_julian_day();
-		JDN_to_date();
-		return *this;
-	}
 	virtual Date & add_year(int n = 1)=0;
 	virtual Date & add_month(int n = 1)=0;
 	friend ostream & operator<<(ostream & os, const Date & b);
