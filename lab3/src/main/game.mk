@@ -1,0 +1,1 @@
+OBJS += $(SRC)/game.cpp
