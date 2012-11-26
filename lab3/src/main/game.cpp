@@ -1,7 +1,7 @@
-#include "object.h"
+#include "character.h"
+#include <iostream>
 using namespace std;
-
-int main(){
-	print(TEST);
-}
-
+	int main(){
+		cout << "IT'S ALIVE! So far..." << endl;
+		return 0;
+	}
