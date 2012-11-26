@@ -9,6 +9,9 @@ include $(SRC)/game.mk
 SRC = $(SRCROOT)/character
 include $(SRC)/character.mk
 
+SRC = $(SRCROOT)/object
+include $(SRC)/object.mk
+
 
 make: 
 	@ g++ -o bin/game.elf $(CFLAGS) $(OBJS) -I $(INCLUDE)

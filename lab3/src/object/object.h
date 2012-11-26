@@ -3,15 +3,23 @@
 #include <string>
 using namespace std;
 
-extern string TEST;
+namespace game{
+	struct Object{
+		string n;
+		string t;
+		string d;
+		int w;
+		int v;
+		int p;
 
-void print(string a);
-
-struct Object{
-	string name;
-	string type;
-
-	Object(string n, string t): name(n),type(t) {};
-
+		Object(string name, string type, string description, int weight, int volume, int price);
+		bool operator==(const Object & oref);
+		string name() const;
+		string type() const;
+		void description();
+		int weight();
+		int volume();
+		int price();
+	};
 };
 #endif

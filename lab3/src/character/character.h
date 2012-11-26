@@ -13,8 +13,8 @@ namespace game {
 
 		Character(string name, string type, Environment * e);
 
-		string type();
-		string name();
+		string type() const;
+		string name() const;
 		void go(string direction);
 		void drop(string object);
 		void pick_up(string object);

@@ -9,14 +9,14 @@ namespace game{
 	Character::Character(string name, string type, Environment e): n(name), t(type), environ(e) {};
 
 	bool Character::operator==(const Character & cref){
-		return n == char.name();
+		return n == cref.name();
 	}
 	
 	string Character::type(){
 		return t;
 	}
 
-	string Character::name(){
+	string Character::name() const{
 		return n;
 	}
 
