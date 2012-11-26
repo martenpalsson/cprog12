@@ -10,10 +10,11 @@ SRC = $(SRCROOT)/main
 include $(SRC)/game.mk
 
 SRC = $(SRCROOT)/environ
-include $(SRC)/terrain.mk
+include $(SRC)/environ.mk
 
 SRC = $(SRCROOT)/character
 include $(SRC)/actor.mk
+	
 make: all
 	@ g++ -o bin/game.elf $(CFLAGS) $(OBJS) -I $(INCLUDE)
 
