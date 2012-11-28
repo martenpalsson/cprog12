@@ -11,9 +11,10 @@ namespace game {
 	class Character;
 	struct Environment{
 		
+		Environment & operator=(const Environment & e);
 		//Environment(string description, int id);
 		bool operator==(const Environment & env);
-
+		
 		map<string, Environment*> exits;
 		string descr;
 		vector<Object> objects;
@@ -22,6 +23,7 @@ namespace game {
 
 		int get_id() const;
 		string description() const;
+		bool set_neighbour(string dir, Environment * env);
 		bool neighbour(Environment * env, string direction);
 		void directions() const;
 		void enter(Character & character);

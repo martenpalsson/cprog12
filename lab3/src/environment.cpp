@@ -12,6 +12,15 @@ namespace game{
 		id = id2;
 	}
 */
+	Environment & Environment::operator=(const Environment & e){
+		exits = e.exits;
+		descr = e.descr;
+		objects = e.objects;
+		characters = e.characters;
+		id = e.id;
+		return *this;
+	}
+
 	bool Environment::operator==(const Environment & env){
 		if(env.get_id() == get_id()){
 			return true;
@@ -22,10 +31,14 @@ namespace game{
 	int Environment::get_id() const{
 		return id;
 	}
-
+	
 	//returns the description of the current environment
 	string Environment::description() const{
 		return descr;
+	}
+	
+	bool Environment::set_neighbour(string direction, Environment * e){
+		return exits.insert({direction, e}).second;
 	}
 	
 	//Get a reference to the neigbour in the chosen direction

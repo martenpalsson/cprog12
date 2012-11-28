@@ -111,6 +111,30 @@ game/fast:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+src/boxer.o: src/boxer.cpp.o
+.PHONY : src/boxer.o
+
+# target to build an object file
+src/boxer.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/boxer.cpp.o
+.PHONY : src/boxer.cpp.o
+
+src/boxer.i: src/boxer.cpp.i
+.PHONY : src/boxer.i
+
+# target to preprocess a source file
+src/boxer.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/boxer.cpp.i
+.PHONY : src/boxer.cpp.i
+
+src/boxer.s: src/boxer.cpp.s
+.PHONY : src/boxer.s
+
+# target to generate assembly for a file
+src/boxer.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/boxer.cpp.s
+.PHONY : src/boxer.cpp.s
+
 src/character.o: src/character.cpp.o
 .PHONY : src/character.o
 
@@ -312,6 +336,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... game"
 	@echo "... rebuild_cache"
+	@echo "... src/boxer.o"
+	@echo "... src/boxer.i"
+	@echo "... src/boxer.s"
 	@echo "... src/character.o"
 	@echo "... src/character.i"
 	@echo "... src/character.s"
