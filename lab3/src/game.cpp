@@ -32,9 +32,6 @@ using namespace std;
 	}
 
 	void init_chars(vector<game::Character*> & characters, game::Environment * start){
-		game::Boxer simost("Busen",103,start);
-		start->enter(simost);
-		characters.push_back(&simost);
 	}
 
 	void init_game(vector<game::Character*> & characters, game::Environment *start){
@@ -49,6 +46,9 @@ using namespace std;
 		game::House a("hus1",0);
 		game::Environment * start = &a;
 		
+		game::Boxer simost("Busen",103,start);
+		start->enter(simost);
+		characters.push_back(&simost);
 		init_game(characters,start);
 		cout << "Chars: " << characters.size() << endl;
 		cout << "Start: " << start->description() << endl;
@@ -73,6 +73,7 @@ using namespace std;
 				parser.help();
 			}
 			//Här ska man utföra sin action!
+			
 			int action;
 			//Här utför npc:erna sina movez
 			cout << "testar random" << endl;
