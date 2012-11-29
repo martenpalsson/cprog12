@@ -21,12 +21,13 @@ namespace game {
 		vector<Character*> characters;
 		int id;
 
+		void print_characters();
 		int get_id() const;
 		string description() const;
 		bool set_neighbour(string dir, Environment * env);
-		bool neighbour(Environment * env, string direction);
+		bool neighbour(Environment & env, string direction);
 		void directions() const;
-		void enter(Character & character);
+		void enter(Character * character);
 		void leave(Character & character);
 		void pick_up(Object obj);
 		void drop(Object obj);

@@ -36,17 +36,29 @@ namespace game{
 	string Environment::description() const{
 		return descr;
 	}
-	
+
+	void Environment::print_characters(){
+		if(characters.size() > 1){
+			cout << "Current residents of " << description() << endl;
+			for(unsigned int i = 0; i < characters.size(); i++){
+				cout << "\t" << characters[i]->name() << endl;
+			}
+		} else {
+			cout << "You are alone in " << description() << endl;
+		}
+	}
 	bool Environment::set_neighbour(string direction, Environment * e){
 		return exits.insert({direction, e}).second;
 	}
 	
 	//Get a reference to the neigbour in the chosen direction
-	bool Environment::neighbour(Environment * env, string direction){
-		
+	bool Environment::neighbour(Environment & env, string direction){
 		auto it = exits.find(direction);
-		env = it->second; 
-		return it == exits.end();
+		if(it == exits.end()){
+			return false;
+		}
+		env = *(it->second);
+		return true;
 	}
 		
 	//Get a description of all the possible directions from the current 
@@ -54,7 +66,7 @@ namespace game{
 	void Environment::directions() const{
 		cout << "The possible directions are: " << endl;
 		for(auto iter = exits.begin(); iter != exits.end(); iter++){
-			cout << iter->first << ": " << iter->second->description() << endl;
+			cout << "\t" << iter->first << endl;
 		}
 	}
 	
@@ -65,22 +77,9 @@ namespace game{
 			}
 		}
 	}
-/*
-	void Environment::move_to_new_room(Character & character, Environment & env){
-		for(auto it = characters.begin(); it != characters.end(); it++){
-			if(character == **it){
-				characters.erase(it);
-				env.characters.push_back(&character);
-				return;
-			}
-		}
-		cout << "ERROR LEAVE" << endl;
-		return;
-	}
-*/
-	void Environment::enter(Character & character){
-		characters.push_back(&character);
-		return;
+
+	void Environment::enter(Character * character){
+		characters.push_back(character);
 	}
 
 	void Environment::pick_up(Object obj){

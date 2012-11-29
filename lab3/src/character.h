@@ -18,13 +18,21 @@ namespace game {
 
 		string type() const;
 		string name() const;
+		int health() const;
+		Environment * get_pos() const;
+
+		bool operator==(const Character & cref);
+		Character & operator=(const Character & cref);
+
 		void go(string direction);
+		void speak(string line);
 		void drop(string object);
 		void pick_up(string object);
-		bool operator==(const Character & cref);
-
-		virtual bool action(int act) = 0;
-		virtual bool action(int act, string target) = 0;
+		bool action(int act);
+		bool action(int act, string target);
+		virtual Object & dig() = 0;
+		virtual void look() = 0;
+		virtual void look(string target) = 0;
 		virtual void fight(string character) = 0;
 		virtual void talk_to(string character) = 0;
 		virtual void speak() = 0;

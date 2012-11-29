@@ -9,14 +9,15 @@ using namespace std;
 
 namespace game {
 	struct Human : public Character {
-		virtual bool action(int act);
-		virtual bool action(int act, string target);
-		virtual void fight(string character);
-		virtual void talk_to(string character);
-		virtual void speak();
+		
 		Object & dig();
 		void look();
 		void look(string target);
+
+		virtual void talk_to(string character);
+
+		virtual void fight(string character) = 0;
+		virtual void speak() = 0;
 	};
 };
 

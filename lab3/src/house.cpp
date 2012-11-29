@@ -11,9 +11,9 @@ namespace game {
 	}
 	
 	void House::look(string direction){
-		Environment * env = 0;
-		neighbour(env,direction);
-		cout << "You see: " << env->description() << endl;
+		//Environment * env = 0;
+		//neighbour(env,direction);
+		//cout << "You see: " << env->description() << endl;
 	}
 	int House::huntability(){
 		return 0;

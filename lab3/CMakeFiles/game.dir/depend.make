@@ -28,6 +28,7 @@ CMakeFiles/game.dir/src/game.cpp.o: src/boxer.h
 CMakeFiles/game.dir/src/game.cpp.o: src/character.h
 CMakeFiles/game.dir/src/game.cpp.o: src/environment.h
 CMakeFiles/game.dir/src/game.cpp.o: src/game.cpp
+CMakeFiles/game.dir/src/game.cpp.o: src/game.h
 CMakeFiles/game.dir/src/game.cpp.o: src/house.h
 CMakeFiles/game.dir/src/game.cpp.o: src/human.h
 CMakeFiles/game.dir/src/game.cpp.o: src/object.h
