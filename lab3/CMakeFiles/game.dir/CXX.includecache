@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/boxer.h
+human.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.h
+iostream
+-
+string
+-
+
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 string
 -
@@ -35,6 +43,10 @@ object.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
 parser.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
+house.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
+boxer.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/boxer.h
 iostream
 -
 string
@@ -48,6 +60,24 @@ sstream
 iterator
 -
 algorithm
+-
+
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
+environment.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+string
+-
+iostream
+-
+
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.h
+object.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+character.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+iostream
+-
+string
 -
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h

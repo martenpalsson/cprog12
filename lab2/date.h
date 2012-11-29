@@ -12,6 +12,7 @@ protected:
 	int y;
 
 public:
+	virtual ~Date(){}
 	virtual int days_per_week() const =0;
 	virtual int days_this_month() const =0;
 	virtual int months_per_year() const =0;

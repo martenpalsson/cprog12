@@ -2,6 +2,8 @@
 #include "environment.h"
 #include "object.h"
 #include "parser.h"
+#include "house.h"
+#include "boxer.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,23 +17,46 @@
 using namespace std;
 	
 
-	/*
-	Tänkte att vi kunde sätta ihop lite chars och nån bana här 
-	så man kan lira sen. 
-	*/
-	void init_game(vector<game::Character*> chars){
-		//typ Character maestro = wizard("özt,1");
-		//chars.push_back(maestro);
+	void init_map(game::Environment * start){
+		game::House b("hus2",1);
+		game::House c("hus3", 2);
+		game::House d("hus4",3);
+		start->set_neighbour("east", &b);
+		start->set_neighbour("north", &c);
+		b.set_neighbour("west", start);
+		b.set_neighbour("north", &d);
+		c.set_neighbour("east", &d);
+		c.set_neighbour("south", start);
+		d.set_neighbour("west", &c);
+		d.set_neighbour("south", &b);
+	}
+
+	void init_chars(vector<game::Character*> & characters, game::Environment * start){
+	}
+
+	void init_game(vector<game::Character*> & characters, game::Environment *start){
+		init_map(start);
+		init_chars(characters,start);
 		return;
 	}
 
 	int main(){
+		vector<game::Character*> characters;
+		
+		game::House a("hus1",0);
+		game::Environment * start = &a;
+		
+		game::Boxer simost("Busen",103,start);
+		start->enter(simost);
+		characters.push_back(&simost);
+		init_game(characters,start);
+		cout << "Chars: " << characters.size() << endl;
+		cout << "Start: " << start->description() << endl;
+		
 		bool finished = false;
-		vector<game::Character*> chars; //Här är alla aktörer
 		vector<string> tokens;
 		string command = "";
 		game::Parser parser;
-		init_game(chars);
 		while(!finished){
 			cout << ">"; 
 			getline(cin, command); //Läser in ett command
@@ -41,12 +66,14 @@ using namespace std;
 			if(cmd == EXIT){
 				finished = true;
 				cout << "byebye" << endl;
+				return 1;
 			}
 			if(cmd == -1){
 				cout << "bad command" << endl;
 				parser.help();
 			}
 			//Här ska man utföra sin action!
+			
 			int action;
 			//Här utför npc:erna sina movez
 			srand(time(NULL));
