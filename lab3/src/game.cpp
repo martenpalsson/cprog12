@@ -49,14 +49,10 @@ using namespace std;
 			//Här ska man utföra sin action!
 			int action;
 			//Här utför npc:erna sina movez
-			cout << "testar random" << endl;
+			srand(time(NULL));
 			for(unsigned int i = 0; i < 10; i++){
-				srand(time(NULL));
-				action = (rand() + 67*i) % parser.cmds.size();
-				//och här gör dom det som action blir
-				cout << action << endl;
+				action = rand() % parser.cmds.size();
 			}
-			cout << endl;
 			tokens.clear();
 		}
 		return 0;
