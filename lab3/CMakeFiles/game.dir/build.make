@@ -115,9 +115,32 @@ CMakeFiles/game.dir/src/house.cpp.o.provides: CMakeFiles/game.dir/src/house.cpp.
 
 CMakeFiles/game.dir/src/house.cpp.o.provides.build: CMakeFiles/game.dir/src/house.cpp.o
 
+CMakeFiles/game.dir/src/troll.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/troll.cpp.o: src/troll.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/troll.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/troll.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/troll.cpp
+
+CMakeFiles/game.dir/src/troll.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/troll.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marten/documents/kth/cprog12/lab3/src/troll.cpp > CMakeFiles/game.dir/src/troll.cpp.i
+
+CMakeFiles/game.dir/src/troll.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/troll.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marten/documents/kth/cprog12/lab3/src/troll.cpp -o CMakeFiles/game.dir/src/troll.cpp.s
+
+CMakeFiles/game.dir/src/troll.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/troll.cpp.o.requires
+
+CMakeFiles/game.dir/src/troll.cpp.o.provides: CMakeFiles/game.dir/src/troll.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/troll.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/troll.cpp.o.provides
+
+CMakeFiles/game.dir/src/troll.cpp.o.provides.build: CMakeFiles/game.dir/src/troll.cpp.o
+
 CMakeFiles/game.dir/src/parser.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/parser.cpp.o: src/parser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/parser.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/parser.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/parser.cpp
 
@@ -140,7 +163,7 @@ CMakeFiles/game.dir/src/parser.cpp.o.provides.build: CMakeFiles/game.dir/src/par
 
 CMakeFiles/game.dir/src/game.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/game.cpp.o: src/game.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/game.cpp
 
@@ -163,7 +186,7 @@ CMakeFiles/game.dir/src/game.cpp.o.provides.build: CMakeFiles/game.dir/src/game.
 
 CMakeFiles/game.dir/src/boxer.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/boxer.cpp.o: src/boxer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/boxer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/boxer.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/boxer.cpp
 
@@ -186,7 +209,7 @@ CMakeFiles/game.dir/src/boxer.cpp.o.provides.build: CMakeFiles/game.dir/src/boxe
 
 CMakeFiles/game.dir/src/object.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/object.cpp.o: src/object.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/object.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/object.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/object.cpp
 
@@ -209,7 +232,7 @@ CMakeFiles/game.dir/src/object.cpp.o.provides.build: CMakeFiles/game.dir/src/obj
 
 CMakeFiles/game.dir/src/forest.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/forest.cpp.o: src/forest.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/forest.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/forest.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/forest.cpp
 
@@ -230,9 +253,32 @@ CMakeFiles/game.dir/src/forest.cpp.o.provides: CMakeFiles/game.dir/src/forest.cp
 
 CMakeFiles/game.dir/src/forest.cpp.o.provides.build: CMakeFiles/game.dir/src/forest.cpp.o
 
+CMakeFiles/game.dir/src/monster.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/monster.cpp.o: src/monster.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/monster.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/monster.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/monster.cpp
+
+CMakeFiles/game.dir/src/monster.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/monster.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marten/documents/kth/cprog12/lab3/src/monster.cpp > CMakeFiles/game.dir/src/monster.cpp.i
+
+CMakeFiles/game.dir/src/monster.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/monster.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marten/documents/kth/cprog12/lab3/src/monster.cpp -o CMakeFiles/game.dir/src/monster.cpp.s
+
+CMakeFiles/game.dir/src/monster.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/monster.cpp.o.requires
+
+CMakeFiles/game.dir/src/monster.cpp.o.provides: CMakeFiles/game.dir/src/monster.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/monster.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/monster.cpp.o.provides
+
+CMakeFiles/game.dir/src/monster.cpp.o.provides.build: CMakeFiles/game.dir/src/monster.cpp.o
+
 CMakeFiles/game.dir/src/environment.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/environment.cpp.o: src/environment.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marten/documents/kth/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/environment.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/environment.cpp.o -c /home/marten/documents/kth/cprog12/lab3/src/environment.cpp
 
@@ -258,11 +304,13 @@ game_OBJECTS = \
 "CMakeFiles/game.dir/src/character.cpp.o" \
 "CMakeFiles/game.dir/src/human.cpp.o" \
 "CMakeFiles/game.dir/src/house.cpp.o" \
+"CMakeFiles/game.dir/src/troll.cpp.o" \
 "CMakeFiles/game.dir/src/parser.cpp.o" \
 "CMakeFiles/game.dir/src/game.cpp.o" \
 "CMakeFiles/game.dir/src/boxer.cpp.o" \
 "CMakeFiles/game.dir/src/object.cpp.o" \
 "CMakeFiles/game.dir/src/forest.cpp.o" \
+"CMakeFiles/game.dir/src/monster.cpp.o" \
 "CMakeFiles/game.dir/src/environment.cpp.o"
 
 # External object files for target game
@@ -271,11 +319,13 @@ game_EXTERNAL_OBJECTS =
 game: CMakeFiles/game.dir/src/character.cpp.o
 game: CMakeFiles/game.dir/src/human.cpp.o
 game: CMakeFiles/game.dir/src/house.cpp.o
+game: CMakeFiles/game.dir/src/troll.cpp.o
 game: CMakeFiles/game.dir/src/parser.cpp.o
 game: CMakeFiles/game.dir/src/game.cpp.o
 game: CMakeFiles/game.dir/src/boxer.cpp.o
 game: CMakeFiles/game.dir/src/object.cpp.o
 game: CMakeFiles/game.dir/src/forest.cpp.o
+game: CMakeFiles/game.dir/src/monster.cpp.o
 game: CMakeFiles/game.dir/src/environment.cpp.o
 game: CMakeFiles/game.dir/build.make
 game: CMakeFiles/game.dir/link.txt
@@ -289,11 +339,13 @@ CMakeFiles/game.dir/build: game
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/character.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/human.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/house.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/troll.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/parser.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/game.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/boxer.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/object.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/forest.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/monster.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/environment.cpp.o.requires
 .PHONY : CMakeFiles/game.dir/requires
 

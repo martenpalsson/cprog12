@@ -276,6 +276,30 @@ src/human.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/human.cpp.s
 .PHONY : src/human.cpp.s
 
+src/monster.o: src/monster.cpp.o
+.PHONY : src/monster.o
+
+# target to build an object file
+src/monster.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/monster.cpp.o
+.PHONY : src/monster.cpp.o
+
+src/monster.i: src/monster.cpp.i
+.PHONY : src/monster.i
+
+# target to preprocess a source file
+src/monster.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/monster.cpp.i
+.PHONY : src/monster.cpp.i
+
+src/monster.s: src/monster.cpp.s
+.PHONY : src/monster.s
+
+# target to generate assembly for a file
+src/monster.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/monster.cpp.s
+.PHONY : src/monster.cpp.s
+
 src/object.o: src/object.cpp.o
 .PHONY : src/object.o
 
@@ -324,6 +348,30 @@ src/parser.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/parser.cpp.s
 .PHONY : src/parser.cpp.s
 
+src/troll.o: src/troll.cpp.o
+.PHONY : src/troll.o
+
+# target to build an object file
+src/troll.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/troll.cpp.o
+.PHONY : src/troll.cpp.o
+
+src/troll.i: src/troll.cpp.i
+.PHONY : src/troll.i
+
+# target to preprocess a source file
+src/troll.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/troll.cpp.i
+.PHONY : src/troll.cpp.i
+
+src/troll.s: src/troll.cpp.s
+.PHONY : src/troll.s
+
+# target to generate assembly for a file
+src/troll.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/troll.cpp.s
+.PHONY : src/troll.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -354,12 +402,18 @@ help:
 	@echo "... src/human.o"
 	@echo "... src/human.i"
 	@echo "... src/human.s"
+	@echo "... src/monster.o"
+	@echo "... src/monster.i"
+	@echo "... src/monster.s"
 	@echo "... src/object.o"
 	@echo "... src/object.i"
 	@echo "... src/object.s"
 	@echo "... src/parser.o"
 	@echo "... src/parser.i"
 	@echo "... src/parser.s"
+	@echo "... src/troll.o"
+	@echo "... src/troll.i"
+	@echo "... src/troll.s"
 .PHONY : help
 
 

@@ -16,7 +16,12 @@ namespace game{
 		n = cref.name();
 		hp = cref.health();
 		curr_pos = cref.get_pos();
+		player = cref.is_player();
 		return *this;
+	}
+
+	bool Character::is_player() const{
+		return player;
 	}
 
 	void Character::speak(string line){
@@ -40,6 +45,7 @@ namespace game{
 
 	void Character::go(string direction){
 		string from = curr_pos->description();
+		curr_pos->leave(*this);
 		if(curr_pos->neighbour(*curr_pos, direction)){
 			curr_pos->enter(this);
 			cout << "You have left " << from <<  " and entered " << curr_pos->description() << endl;

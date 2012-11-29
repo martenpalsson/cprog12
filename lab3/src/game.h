@@ -8,6 +8,7 @@
 #include "parser.h"
 #include "house.h"
 #include "boxer.h"
+#include "troll.h" 
 
 #include <string>
 #include <vector>

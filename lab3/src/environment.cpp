@@ -74,11 +74,21 @@ namespace game{
 		for(auto it = characters.begin(); it != characters.end(); it++){
 			if(character == **it){
 				characters.erase(it);
+				if(character.is_player()){
+					pp = false;
+					cout << "THE PLAYER HAS LEFT THE BUILDING!: " << description() << endl;
+					return;
+				}
 			}
 		}
 	}
 
 	void Environment::enter(Character * character){
+		if(character->is_player()){
+			pp = true;
+			cout << "THE PLAYER HAS ENTERED THE BUILDING!: " << description() << endl;
+
+		}
 		characters.push_back(character);
 	}
 

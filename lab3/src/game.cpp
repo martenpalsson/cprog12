@@ -13,7 +13,7 @@
 using namespace std;
 	
 
-	void init_map(game::Environment & start){
+	void init_map(game::Environment & start, vector<game::Environment*> & map){
 		game::House * b = new game::House("hus2",1);
 		game::House * c = new game::House("hus3",2);
 		game::House * d = new game::House("hus4",3);
@@ -25,27 +25,43 @@ using namespace std;
 		c->set_neighbour("south", &start);
 		d->set_neighbour("west", c);
 		d->set_neighbour("south", b);
+
+		map.push_back(&start);
+		map.push_back(b);
+		map.push_back(c);
+		map.push_back(d);
+	}
+	
+	void random_insert(game::Character & ch, vector<game::Environment*> map){
+		int room = rand() % map.size();
+		ch.curr_pos->leave(ch);
+		ch.curr_pos = map[room];
+		map[room]->enter(&ch);
 	}
 
-	void init_chars(vector<game::Character*> & characters, game::Environment & start){
-		//TODO
+	void init_chars(vector<game::Character*> & characters, game::Environment & start,vector<game::Environment*> & map){
+		game::Character * troll1 = new game::Troll("Trolle", &start);
+		game::Character * troll2 = new game::Troll("Trolla", &start);
+		random_insert(*troll1,map);
+		random_insert(*troll2,map);
+		characters.push_back(troll1);
+		characters.push_back(troll2);
 	}
 
-	void init_game(game::Parser parser, vector<game::Character*> & characters, game::Environment & start){
-		init_map(start);
+	void init_game(game::Parser parser, vector<game::Character*> & characters, game::Environment & start, vector<game::Environment*> & map){
+		init_map(start,map);
 		init_player(characters, parser, start);
-		init_chars(characters,start);
+		init_chars(characters,start,map);
 		return;
 	}
 
 	void gen_npc_actions(vector<game::Character*> npc, game::Parser parser){
 			int action;
-			srand(time(NULL));
 			for(unsigned int i = 1; i < npc.size(); i++){
 				action = rand() % (parser.cmds.size()-2);
-				cout << "Npc nr " << i << " gör sitt move" << endl;
-				
-				npc[i]->action(action);
+				cout << npc[i]->name();
+				cout << " är i " << npc[i]->curr_pos->description() << endl;
+				npc[i]->action(5);
 			}
 	}
 
@@ -77,7 +93,7 @@ using namespace std;
 		switch(race){
 			case 1:
 			{
-				game::Boxer * player = new game::Boxer(name, 100, &start);
+				game::Boxer * player = new game::Boxer(name, 100, &start, true);
 				characters.push_back(player);
 				start.enter(player);
 				break;
@@ -94,13 +110,15 @@ using namespace std;
 
 
 	int main(){
+		srand(time(NULL));
+		vector<game::Environment*> map;
 		vector<game::Character*> characters;
 		game::Parser parser;
 
 		game::House a("hus1",0);
 		game::Environment * start = &a;
-
-		init_game(parser,characters,*start);
+		
+		init_game(parser,characters,*start,map);
 		cout << "-------------------------" << endl;
 		cout << "\tGAME ON" << endl;
 		cout << "-------------------------" << endl;

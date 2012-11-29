@@ -11,6 +11,7 @@ namespace game {
 	class Character;
 	struct Environment{
 		
+		bool pp;
 		Environment & operator=(const Environment & e);
 		//Environment(string description, int id);
 		bool operator==(const Environment & env);

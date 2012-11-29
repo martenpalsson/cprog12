@@ -32,8 +32,10 @@ CMakeFiles/game.dir/src/game.cpp.o
  /home/marten/documents/kth/cprog12/lab3/src/game.h
  /home/marten/documents/kth/cprog12/lab3/src/house.h
  /home/marten/documents/kth/cprog12/lab3/src/human.h
+ /home/marten/documents/kth/cprog12/lab3/src/monster.h
  /home/marten/documents/kth/cprog12/lab3/src/object.h
  /home/marten/documents/kth/cprog12/lab3/src/parser.h
+ /home/marten/documents/kth/cprog12/lab3/src/troll.h
 CMakeFiles/game.dir/src/house.cpp.o
  /home/marten/documents/kth/cprog12/lab3/src/character.h
  /home/marten/documents/kth/cprog12/lab3/src/environment.h
@@ -46,6 +48,12 @@ CMakeFiles/game.dir/src/human.cpp.o
  /home/marten/documents/kth/cprog12/lab3/src/human.cpp
  /home/marten/documents/kth/cprog12/lab3/src/human.h
  /home/marten/documents/kth/cprog12/lab3/src/object.h
+CMakeFiles/game.dir/src/monster.cpp.o
+ /home/marten/documents/kth/cprog12/lab3/src/character.h
+ /home/marten/documents/kth/cprog12/lab3/src/environment.h
+ /home/marten/documents/kth/cprog12/lab3/src/monster.cpp
+ /home/marten/documents/kth/cprog12/lab3/src/monster.h
+ /home/marten/documents/kth/cprog12/lab3/src/object.h
 CMakeFiles/game.dir/src/object.cpp.o
  /home/marten/documents/kth/cprog12/lab3/src/object.cpp
  /home/marten/documents/kth/cprog12/lab3/src/object.h
@@ -55,3 +63,10 @@ CMakeFiles/game.dir/src/parser.cpp.o
  /home/marten/documents/kth/cprog12/lab3/src/object.h
  /home/marten/documents/kth/cprog12/lab3/src/parser.cpp
  /home/marten/documents/kth/cprog12/lab3/src/parser.h
+CMakeFiles/game.dir/src/troll.cpp.o
+ /home/marten/documents/kth/cprog12/lab3/src/character.h
+ /home/marten/documents/kth/cprog12/lab3/src/environment.h
+ /home/marten/documents/kth/cprog12/lab3/src/monster.h
+ /home/marten/documents/kth/cprog12/lab3/src/object.h
+ /home/marten/documents/kth/cprog12/lab3/src/troll.cpp
+ /home/marten/documents/kth/cprog12/lab3/src/troll.h

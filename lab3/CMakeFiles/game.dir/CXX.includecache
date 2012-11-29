@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/marten/documents/kth/cprog12/lab3/src/character.cpp
-string
--
-iostream
--
-character.h
-/home/marten/documents/kth/cprog12/lab3/src/character.h
-
 /home/marten/documents/kth/cprog12/lab3/src/character.h
 string
 -
@@ -46,24 +38,6 @@ string
 map
 -
 vector
--
-
-/home/marten/documents/kth/cprog12/lab3/src/human.cpp
-human.h
-/home/marten/documents/kth/cprog12/lab3/src/human.h
-iostream
--
-string
--
-
-/home/marten/documents/kth/cprog12/lab3/src/human.h
-object.h
-/home/marten/documents/kth/cprog12/lab3/src/object.h
-character.h
-/home/marten/documents/kth/cprog12/lab3/src/character.h
-iostream
--
-string
 -
 
 /home/marten/documents/kth/cprog12/lab3/src/object.h

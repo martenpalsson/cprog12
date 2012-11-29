@@ -21,6 +21,7 @@ namespace game{
 	}
 
 	Object & Human::dig(){
+		//MAINTAINERS NOTE: DANGER!
 		cout << "You picked up an object" << endl;
 		Object * obj = new Object("sak", "grej", "en fin sak", 1, 7, 900);
 		return *obj;

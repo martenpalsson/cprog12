@@ -11,8 +11,10 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/marten/documents/kth/cprog12/lab3/src/game.cpp" "/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir/src/game.cpp.o"
   "/home/marten/documents/kth/cprog12/lab3/src/house.cpp" "/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir/src/house.cpp.o"
   "/home/marten/documents/kth/cprog12/lab3/src/human.cpp" "/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir/src/human.cpp.o"
+  "/home/marten/documents/kth/cprog12/lab3/src/monster.cpp" "/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir/src/monster.cpp.o"
   "/home/marten/documents/kth/cprog12/lab3/src/object.cpp" "/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir/src/object.cpp.o"
   "/home/marten/documents/kth/cprog12/lab3/src/parser.cpp" "/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir/src/parser.cpp.o"
+  "/home/marten/documents/kth/cprog12/lab3/src/troll.cpp" "/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir/src/troll.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

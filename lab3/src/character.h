@@ -13,9 +13,10 @@ namespace game {
 		string n;
 		string t;
 		Environment * curr_pos;
+		bool player;
 
 //		Character(string name, string type, int health, Environment * e);
-
+		bool is_player() const;
 		string type() const;
 		string name() const;
 		int health() const;
