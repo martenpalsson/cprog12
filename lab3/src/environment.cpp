@@ -13,6 +13,7 @@ namespace game{
 	}
 */
 	Environment & Environment::operator=(const Environment & e){
+		pp = e.pp;
 		exits = e.exits;
 		descr = e.descr;
 		objects = e.objects;
@@ -52,19 +53,18 @@ namespace game{
 	}
 	
 	//Get a reference to the neigbour in the chosen direction
-	bool Environment::neighbour(Environment & env, string direction){
+	Environment & Environment::neighbour(string direction){
 		auto it = exits.find(direction);
 		if(it == exits.end()){
-			return false;
+			return *this;;
 		}
-		env = *(it->second);
-		return true;
+		return *(it->second);
 	}
 		
 	//Get a description of all the possible directions from the current 
 	//environment
 	void Environment::directions() const{
-		cout << "The possible directions are: " << endl;
+		cout << "You can move: " << endl;
 		for(auto iter = exits.begin(); iter != exits.end(); iter++){
 			cout << "\t" << iter->first << endl;
 		}
@@ -76,20 +76,17 @@ namespace game{
 				characters.erase(it);
 				if(character.is_player()){
 					pp = false;
-					cout << "THE PLAYER HAS LEFT THE BUILDING!: " << description() << endl;
 					return;
 				}
 			}
 		}
 	}
 
-	void Environment::enter(Character * character){
-		if(character->is_player()){
+	void Environment::enter(Character & character){
+		if(character.is_player()){
 			pp = true;
-			cout << "THE PLAYER HAS ENTERED THE BUILDING!: " << description() << endl;
-
 		}
-		characters.push_back(character);
+		characters.push_back(&character);
 	}
 
 	void Environment::pick_up(Object obj){

@@ -12,7 +12,7 @@ namespace game{
 	Boxer::Boxer(string name, int health, Environment * e, bool p){
 		n = name;
 		hp = health;
-		curr_pos = e;
+		set_pos(e);
 		t = "boxer";
 		player = p;
 	}
@@ -22,7 +22,7 @@ namespace game{
 		srand(time(NULL));
 		hp = (rand() % 30) + 10;
 		t = "boxer";
-		curr_pos = e;
+		set_pos(e);
 		player = false;
 	}
 

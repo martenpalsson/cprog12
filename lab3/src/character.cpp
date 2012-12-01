@@ -10,6 +10,10 @@ namespace game{
 	bool Character::operator==(const Character & cref){
 		return n == cref.name();
 	}
+	
+	Environment * Character::get_pos(){
+		return curr_pos;
+	}
 
 	Character & Character::operator=(const Character & cref){
 		t = cref.type();
@@ -19,7 +23,10 @@ namespace game{
 		player = cref.is_player();
 		return *this;
 	}
-
+	
+	void Character::set_pos(Environment * to){
+		curr_pos = to;
+	}
 	bool Character::is_player() const{
 		return player;
 	}
@@ -46,12 +53,15 @@ namespace game{
 	void Character::go(string direction){
 		string from = curr_pos->description();
 		curr_pos->leave(*this);
-		if(curr_pos->neighbour(*curr_pos, direction)){
-			curr_pos->enter(this);
-			cout << "You have left " << from <<  " and entered " << curr_pos->description() << endl;
-		} else {
+		Environment & to = curr_pos->neighbour(direction);
+		if(to == *curr_pos){
 			cout << "You can't go there.." << endl;
+		} else {
+			set_pos(&to);
+			curr_pos->enter(*this);
+			cout << "You have left " << from <<  " and entered " << to.description() << endl;
 		}
+
 	}
 
 	void Character::drop(string object){
@@ -93,7 +103,7 @@ namespace game{
 			case 3: fight(target);
 				return true;
 			case 4: talk_to(target);
-				return true;
+				return false;
 			case 5: speak(target);
 				return false;
 			default: cout << "You cannot perform this move.." << endl;

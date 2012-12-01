@@ -9,10 +9,12 @@ using namespace std;
 class Environment;
 namespace game {
 	struct Character{
+	private:
+		Environment * curr_pos;
+	public:
 		int hp;
 		string n;
 		string t;
-		Environment * curr_pos;
 		bool player;
 
 //		Character(string name, string type, int health, Environment * e);
@@ -24,8 +26,9 @@ namespace game {
 
 		bool operator==(const Character & cref);
 		Character & operator=(const Character & cref);
-
+		void set_pos(Environment * to);
 		void go(string direction);
+		Environment * get_pos();
 		void speak(string line);
 		void drop(string object);
 		void pick_up(string object);

@@ -20,8 +20,8 @@ struct Environment;
 void init_map(game::Environment & start);
 void init_chars(vector<game::Character*> & characters, game::Environment & start);
 void init_game(game::Parser parser, vector<game::Character*> & characters, game::Environment & start);
-void gen_npc_actions(vector<game::Character*> npc, game::Parser parser);
+void gen_npc_actions(vector<game::Character*> & npc, game::Parser parser);
 void split_line(vector<string> & tokens, string cmd);
-void init_player(vector<game::Character*> & characters, game::Parser & parser, game::Environment & start);
+void init_player(vector<game::Character*> & characters, game::Parser & parser, game::Environment * & start);
 int main();
 #endif

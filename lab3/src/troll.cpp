@@ -9,7 +9,7 @@ namespace game{
 	Troll::Troll(string name, int health, Environment * e, bool p){
 		n = name;
 		hp = health;
-		curr_pos = e;
+		set_pos(e);
 		t = "troll";
 		player = p;
 	}
@@ -19,12 +19,12 @@ namespace game{
 		srand(time(NULL));
 		hp = (rand() % 30) + 10;
 		t = "troll";
-		curr_pos = e;
+		set_pos(e);
 		player = false;
 	}
 	
 	void Troll::fight(string target){
-		if(curr_pos->pp){
+		if(get_pos()->pp){
 			cout << n << " fights " << target << endl;
 		}
 	}

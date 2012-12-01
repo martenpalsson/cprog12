@@ -1,1 +1,1 @@
-/home/marten/documents/kth/cprog12/lab3/CMakeFiles/game.dir
+/home/simon/Documents/kurser/cprog12/lab3/CMakeFiles/game.dir
