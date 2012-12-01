@@ -29,6 +29,15 @@ namespace game{
 		return false;
 	}
 
+	bool Environment::is_character(string target){
+		for(auto it = characters.begin(); it != characters.end(); it++){
+			if((*it)->name() == target){
+				return true;
+			}
+		}
+		return false;
+	}
+
 	int Environment::get_id() const{
 		return id;
 	}
@@ -89,18 +98,33 @@ namespace game{
 		characters.push_back(&character);
 	}
 
-	void Environment::pick_up(Object obj){
-		for(auto iter = objects.begin(); iter != objects.end(); iter++){
-			/*if(obj.name() == *iter.name()){
-				objects.erase(iter);
-				return;
-			}*/
+	void Environment::pick_up(Object * obj){
+		for(auto it = objects.begin(); it != objects.end(); it++){
+			if(*it == obj){
+				objects.erase(it);
+			}
 		}
-		cout << "ERROR PICK_UP" << endl;
-		return;
+		cout << "Picked up " << obj->name() << "!" << endl;
+	}
+
+	Object * Environment::hidden_items(){
+		if(objects.size() < 0){
+			return objects.front();
+		}
+		return NULL;
 	}
 	
-	void Environment::drop(Object obj){
+	void Environment::drop(Object * obj){
+		cout << "You dropped " << obj->name() << endl;
 		objects.push_back(obj);
+	}
+
+	bool Environment::find_object(string object){
+		for(auto it=objects.begin(); it != objects.end(); it++){
+			if((*it)->name() == object){
+				return true;
+			}
+		}
+		return false;
 	}
 };

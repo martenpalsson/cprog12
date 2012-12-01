@@ -18,10 +18,13 @@ namespace game {
 		
 		map<string, Environment*> exits;
 		string descr;
-		vector<Object> objects;
+		vector<Object*> objects;
 		vector<Character*> characters;
 		int id;
 
+		Object * hidden_items();
+		bool is_character(string target);
+		bool find_object(string object);
 		void print_characters();
 		int get_id() const;
 		string description() const;
@@ -30,8 +33,8 @@ namespace game {
 		void directions() const;
 		void enter(Character & character);
 		void leave(Character & character);
-		void pick_up(Object obj);
-		void drop(Object obj);
+		void pick_up(Object * obj);
+		void drop(Object * obj);
 		virtual int huntability() = 0;
 		virtual void look(string direction) = 0;
 		virtual bool dig(Object & container) = 0;

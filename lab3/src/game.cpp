@@ -58,11 +58,26 @@ using namespace std;
 	}
 
 	void gen_npc_actions(vector<game::Character*> & npc, game::Parser parser){
-			int action;
-			for(unsigned int i = 0; i < npc.size(); i++){
-				action = rand() % (parser.cmds.size()-2);
-				npc[i]->action(5);
+		unsigned int action;
+		unsigned int target;
+		unsigned int two_args = false;
+		for(unsigned int i = 1; i < npc.size(); i++){
+			action = rand() % (parser.cmds.size()-2);
+			two_args = rand() % 2;
+			if(two_args){
+				if(action == 0){ //börja om
+					i--;
+					continue;
+				}
+				
+				vector<game::Character*> targets = npc[i]->get_pos()->characters;
+				target = rand() % targets.size();
+				npc[i]->action(action,targets[target]->name());
+				continue;
 			}
+			npc[i]->action(action);
+			continue;
+		}
 	}
 
 	void split_line(vector<string> & tokens,string cmd){
@@ -98,7 +113,13 @@ using namespace std;
 				start->enter(*player);
 				break;
 			}
-
+			case 2:
+			{
+				game::Troll * player = new game::Troll(name, 100, start, true);
+				npc.push_back(player);
+				start->enter(*player);
+				break;
+			}
 			default:
 				cout << "Someting is horribly wrong. Hide you children, hide your wives cause they are raping everyone up in here!" << endl;
 				init_player(npc, parser, start);
@@ -135,8 +156,6 @@ using namespace std;
 		vector<string> tokens;
 		string command = "";
 		game::Character * player = npc.front();
-		npc.erase(npc.begin());
-		
 		while(!finished){
 			bool pf = false;
 			while(!pf){

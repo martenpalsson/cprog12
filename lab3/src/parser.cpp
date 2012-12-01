@@ -8,7 +8,7 @@ namespace game {
 	//Alla commands
 	vector<string> Parser::cmds = {"move", "dig", "look", "fight", "talk", "speak", "exit","help"};
 	
-	vector<string> Parser::races = {"Boxer"};
+	vector<string> Parser::races = {"Boxer", "Troll"};
 
 	vector<string> Parser::words = {"to", "at", "with"};
 

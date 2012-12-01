@@ -9,7 +9,7 @@ using namespace std;
 
 namespace game{
 	struct Monster : public Character {
-		Object & dig();
+		void dig();
 		void look();
 		void look(string target);
 

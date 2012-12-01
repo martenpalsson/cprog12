@@ -9,8 +9,8 @@ using namespace std;
 
 namespace game {
 	struct Human : public Character {
-		
-		Object & dig();
+		vector<Object*> items;
+		void dig();
 		void look();
 		void look(string target);
 

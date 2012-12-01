@@ -25,7 +25,12 @@ namespace game{
 	
 	void Troll::fight(string target){
 		if(get_pos()->pp){
-			cout << n << " fights " << target << endl;
+			cout << n << " fights ";
+			if(target == name()){
+				cout << "with itself!" << endl;
+				return;
+			}
+			cout << " with " << target << endl;
 		}
 	}
 };

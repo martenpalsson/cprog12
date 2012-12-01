@@ -6,12 +6,10 @@
 using namespace std;
 
 namespace game{
-	Object & Monster::dig(){
-		Object * obj = new Object("nått", "nått bra", "bra skit",1, 2, 3);
+	void Monster::dig(){
 		if(get_pos()->pp){
-			cout << n << " finds a shiny new " << obj->name() << endl;
+			cout << n << " tries to dig... " << endl;
 		}
-		return *obj;
 	}
 
 	void Monster::look(){
@@ -27,9 +25,13 @@ namespace game{
 	}
 
 	void Monster::talk_to(string target){
-		//BÖR KOLLA OM TARGET ÄR EN SJÄLV
 		if(get_pos()->pp){
-			cout << n << "talks to " << target << endl;
+			cout << n;
+			if(target == name()){
+				cout << " has a deep discussion with itself" << endl;
+			} else {
+				cout << " talks to " << target << endl;
+			}
 		}
 	}
 

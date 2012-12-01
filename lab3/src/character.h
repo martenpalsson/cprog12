@@ -34,7 +34,7 @@ namespace game {
 		void pick_up(string object);
 		bool action(int act);
 		bool action(int act, string target);
-		virtual Object & dig() = 0;
+		virtual void dig() = 0;
 		virtual void look() = 0;
 		virtual void look(string target) = 0;
 		virtual void fight(string character) = 0;
