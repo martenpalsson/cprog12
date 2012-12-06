@@ -15,6 +15,8 @@ namespace game {
 		void look(string target);
 
 		virtual void talk_to(string character);
+		void pick_up(string item);
+		void use(string item);
 
 		virtual void fight(string character) = 0;
 		virtual void speak() = 0;

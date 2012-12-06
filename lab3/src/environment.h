@@ -8,6 +8,7 @@
 
 using namespace std;
 namespace game {
+	class Object;
 	class Character;
 	struct Environment{
 		
@@ -16,6 +17,7 @@ namespace game {
 		//Environment(string description, int id);
 		bool operator==(const Environment & env);
 		
+		vector<Object*> hidden_objects;
 		map<string, Environment*> exits;
 		string descr;
 		vector<Object*> objects;
@@ -23,7 +25,7 @@ namespace game {
 		int id;
 
 		Object * hidden_items();
-		bool is_character(string target);
+		Character * is_character(string target);
 		bool find_object(string object);
 		void print_characters();
 		int get_id() const;
@@ -33,7 +35,7 @@ namespace game {
 		void directions() const;
 		void enter(Character & character);
 		void leave(Character & character);
-		void pick_up(Object * obj);
+		Object * pick_up(string object);
 		void drop(Object * obj);
 		virtual int huntability() = 0;
 		virtual void look(string direction) = 0;

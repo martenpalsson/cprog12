@@ -1,4 +1,4 @@
-# Install script for directory: /home/simon/Documents/kurser/cprog12/lab3
+# Install script for directory: /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/simon/Documents/kurser/cprog12/lab3/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/simon/Documents/kurser/cprog12/lab3/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

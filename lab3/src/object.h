@@ -1,25 +1,27 @@
 #ifndef OBJECT_H
 #define OBJECT_H
+#include "character.h"
+#include "environment.h"
 #include <string>
 using namespace std;
 
 namespace game{
+	class Character;
 	struct Object{
 		string n;
-		string t;
+		int t;
 		string d;
 		int w;
-		int v;
-		int p;
+		Character * owner;
 
-		Object(string name, string type, string description, int weight, int volume, int price);
+		Object(string name, int type, string description, int weight);
 		bool operator==(const Object & oref);
 		string name() const;
-		string type() const;
-		void description();
-		int weight();
-		int volume();
-		int price();
+		int type() const;
+		string description() const;
+		int weight() const;
+		void set_owner(Character * o);
+		virtual void event();
 	};
 };
 #endif

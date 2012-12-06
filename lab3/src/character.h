@@ -6,8 +6,8 @@
 #include "object.h"
 using namespace std;
 
-class Environment;
 namespace game {
+class Environment;
 	struct Character{
 	private:
 		Environment * curr_pos;
@@ -24,6 +24,7 @@ namespace game {
 		int health() const;
 		Environment * get_pos() const;
 
+		void npc_action();
 		bool operator==(const Character & cref);
 		Character & operator=(const Character & cref);
 		void set_pos(Environment * to);
@@ -31,7 +32,6 @@ namespace game {
 		Environment * get_pos();
 		void speak(string line);
 		void drop(string object);
-		void pick_up(string object);
 		bool action(int act);
 		bool action(int act, string target);
 		virtual void dig() = 0;
@@ -40,6 +40,8 @@ namespace game {
 		virtual void fight(string character) = 0;
 		virtual void talk_to(string character) = 0;
 		virtual void speak() = 0;
+		virtual void pick_up(string target);
+		virtual void use(string item);
 	};
 };
 

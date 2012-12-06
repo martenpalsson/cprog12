@@ -54,14 +54,22 @@ CMakeFiles/game.dir/src/monster.cpp.o: src/monster.cpp
 CMakeFiles/game.dir/src/monster.cpp.o: src/monster.h
 CMakeFiles/game.dir/src/monster.cpp.o: src/object.h
 
+CMakeFiles/game.dir/src/object.cpp.o: src/character.h
+CMakeFiles/game.dir/src/object.cpp.o: src/environment.h
 CMakeFiles/game.dir/src/object.cpp.o: src/object.cpp
 CMakeFiles/game.dir/src/object.cpp.o: src/object.h
 
+CMakeFiles/game.dir/src/parser.cpp.o: src/boxer.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/character.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/environment.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/game.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/house.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/human.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/monster.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/object.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/parser.cpp
 CMakeFiles/game.dir/src/parser.cpp.o: src/parser.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/troll.h
 
 CMakeFiles/game.dir/src/troll.cpp.o: src/character.h
 CMakeFiles/game.dir/src/troll.cpp.o: src/environment.h

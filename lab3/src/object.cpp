@@ -5,7 +5,13 @@ using namespace std;
 
 namespace game{
 	
-	Object::Object(string name, string type, string description, int weight, int volume, int price): n(name),t(type),d(description),w(weight),v(volume),p(price){}
+	Object::Object(string name, int type, string description, int weight){
+		n = name;
+		t = type;
+		d = description;
+		w = weight;
+		owner = NULL;
+	}
 	
 
 	bool Object::operator==(const Object & oref){
@@ -16,26 +22,33 @@ namespace game{
 		return n;
 	}
 
-	string Object::type() const{
+	int Object::type() const{
 		return t;
 	}
 
-	void Object::description(){
-		cout << d << endl;
+	string Object::description() const{
+		return d;
 	}
 
-	int Object::weight(){
+	int Object::weight() const{ 
 		return w;
 	}
-
-	int Object::volume(){
-		return v;
+	void Object::set_owner(Character * o){
+		owner = o;
 	}
-
-	int Object::price(){
-		return p;
+	void Object::event(){
+		if(owner != NULL){
+			switch(type()){
+				case 0:
+					cout << "svärd event" << endl;
+				default:
+					cout << "event körs för: " << name() << endl;
+					break;
+			}
+		} else {
+			cout << "ingen äger detta.." << endl;
+		}
 	}
-
 
 
 

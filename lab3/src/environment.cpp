@@ -17,6 +17,7 @@ namespace game{
 		exits = e.exits;
 		descr = e.descr;
 		objects = e.objects;
+		hidden_objects = e.hidden_objects;
 		characters = e.characters;
 		id = e.id;
 		return *this;
@@ -29,13 +30,13 @@ namespace game{
 		return false;
 	}
 
-	bool Environment::is_character(string target){
+	Character * Environment::is_character(string target){
 		for(auto it = characters.begin(); it != characters.end(); it++){
 			if((*it)->name() == target){
-				return true;
+				return *it;
 			}
 		}
-		return false;
+		return NULL;
 	}
 
 	int Environment::get_id() const{
@@ -98,24 +99,26 @@ namespace game{
 		characters.push_back(&character);
 	}
 
-	void Environment::pick_up(Object * obj){
-		for(auto it = objects.begin(); it != objects.end(); it++){
-			if(*it == obj){
+	Object * Environment::pick_up(string obj){
+		for(auto it = objects.begin(); it != objects.end(); ++it){
+			if((*it)->name() == obj){
 				objects.erase(it);
+				cout << "Picked up " << obj << "!" << endl;
+				return *it;
 			}
 		}
-		cout << "Picked up " << obj->name() << "!" << endl;
+		return NULL;
 	}
 
 	Object * Environment::hidden_items(){
-		if(objects.size() < 0){
-			return objects.front();
+		if(hidden_objects.size() < 0){
+			return hidden_objects.front();
 		}
 		return NULL;
 	}
 	
 	void Environment::drop(Object * obj){
-		cout << "You dropped " << obj->name() << endl;
+		cout << "You dropped " << obj->description() << endl;
 		objects.push_back(obj);
 	}
 

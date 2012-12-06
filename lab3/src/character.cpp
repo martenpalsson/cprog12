@@ -77,29 +77,42 @@ namespace game{
 			cout << "Dropping " << object << endl;
 		}
 	}
+	void Character::npc_action(){
+	}
 
 	void Character::pick_up(string object){
-		cout <<  "Picking up item" << endl;
+		npc_action();
+	}
+
+	void Character::use(string item){
+		npc_action();
 	}
 
 	bool Character::action(int act){
 		switch(act){
-			case 0: if(get_pos()->pp)
+			case 0: if(is_player())
 					cout << "Where?" << endl;
 				return false;
 			case 1: dig();
 				return true;
 			case 2: look();
 				return false;
-			case 3: if(get_pos()->pp)
+			case 3: if(is_player())
 					cout << "Fight who?" << endl;
 				return false;
-			case 4: if(get_pos()->pp)
+			case 4: if(is_player())
 					cout << "Talk to who?" << endl;
 				return false;
 			case 5: speak();
 				return false;
-			default: cout << "You cannot perform this move.." << endl;
+			case 6: if(is_player())
+					cout << "Use what?";
+				return false;
+			case 7: if(is_player())
+					cout << "Need to specify what to take.." << endl;
+				return false;
+			default: if(is_player())
+					 cout << "You cannot perform this move.." << endl;
 				return false;
 			}
 		return false;
@@ -119,7 +132,12 @@ namespace game{
 				return false;
 			case 5: speak(target);
 				return false;
-			default: cout << "You cannot perform this move.." << endl;
+			case 6: use(target);
+				return true;
+			case 7: pick_up(target);
+				return true;
+			default: if(is_player()) 
+					cout << "You cannot perform this move.." << endl;
 				return false;
 			}
 		return false; 

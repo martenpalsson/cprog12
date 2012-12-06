@@ -37,7 +37,7 @@ namespace game{
 
 	void Monster::speak(){
 		if(get_pos()->pp){
-			cout << n << ": Growoiwowioa!" << endl;
+			cout << "Growoiwowioa!" << endl;
 		}
 
 	}
