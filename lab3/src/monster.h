@@ -13,7 +13,7 @@ namespace game{
 		void look();
 		void look(string target);
 
-		virtual void talk_to(string target);
+		virtual void talk_to(vector<string> target);
 		virtual void speak();
 		
 		virtual void fight(string target) = 0;

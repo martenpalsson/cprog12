@@ -37,6 +37,7 @@ namespace game{
 		owner = o;
 	}
 	void Object::event(){
+		cout << "event" << endl;
 		if(owner != NULL){
 			switch(type()){
 				case 0:

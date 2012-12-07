@@ -7,7 +7,7 @@
 #include "object.h"
 #include "parser.h"
 #include "house.h"
-#include "boxer.h"
+#include "player.h"
 #include "troll.h" 
 
 #include <string>
@@ -29,15 +29,23 @@ void init_player(vector<Character*> & characters, Parser & parser, Environment *
 
 void init_objects(vector<Environment*> & map);
 
-void global_speak(Character * c, string line);
+bool global_speak(Character * c, string line);
 
-void global_talk_to(Character * c, string line);
+bool global_talk_to(Character * c, string line);
 
-void global_move(Character * c, string direction);
+bool global_move(Character * c, string direction);
 
-void global_pick_up(Character * c, string item);
+bool global_pick_up(Character * c, string item);
 
-void global_fight(Character * c, string target);
+bool global_fight(Character * c, string target);
 
-void global_look(Character * c, string a);
+bool global_look(Character * c, string a);
+
+bool global_inv(Character * c, string a);
+
+bool global_status(Character * c, string a);
+
+bool global_drop(Character * c, string item);
+
+bool global_dig(Character * c, string a);
 #endif

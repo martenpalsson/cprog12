@@ -6,21 +6,39 @@
 
 #IncludeRegexTransform: 
 
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/boxer.h
-human.h
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.h
-iostream
--
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp
 string
 -
+iostream
+-
+vector
+-
+character.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 string
+-
+vector
 -
 environment.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 object.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.cpp
+environment.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+object.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+character.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+map
+-
+string
+-
+iostream
+-
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 character.h
@@ -63,8 +81,8 @@ parser.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
 house.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
-boxer.h
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/boxer.h
+player.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.h
 troll.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.h
 string
@@ -86,6 +104,8 @@ object.h
 character.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 iostream
+-
+vector
 -
 string
 -
@@ -114,6 +134,14 @@ functional
 character.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 iostream
+-
+
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.h
+human.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.h
+iostream
+-
+string
 -
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.h

@@ -2,6 +2,7 @@
 #define CHARACTER_H
 	
 #include <string>
+#include <vector>
 #include "environment.h"
 #include "object.h"
 using namespace std;
@@ -16,10 +17,14 @@ class Environment;
 		string n;
 		string t;
 		bool player;
+		int att;
+		int def;
 
 //		Character(string name, string type, int health, Environment * e);
 		bool is_player() const;
 		string type() const;
+		int defense() const;
+		int attack() const;
 		string name() const;
 		int health() const;
 		Environment * get_pos() const;
@@ -32,16 +37,16 @@ class Environment;
 		Environment * get_pos();
 		void speak(string line);
 		void drop(string object);
-		bool action(int act);
-		bool action(int act, string target);
+		void get_status();
 		virtual void dig() = 0;
 		virtual void look() = 0;
 		virtual void look(string target) = 0;
 		virtual void fight(string character) = 0;
-		virtual void talk_to(string character) = 0;
+		virtual void talk_to(vector<string> character) = 0;
 		virtual void speak() = 0;
 		virtual void pick_up(string target);
 		virtual void use(string item);
+		virtual void print_items();
 	};
 };
 

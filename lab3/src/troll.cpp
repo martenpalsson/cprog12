@@ -30,7 +30,7 @@ namespace game{
 				cout << "with itself!" << endl;
 				return;
 			}
-			cout << " with " << target << endl;
+			cout << "with " << target << endl;
 		}
 	}
 };

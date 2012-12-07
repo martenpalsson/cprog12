@@ -24,13 +24,13 @@ namespace game{
 		}
 	}
 
-	void Monster::talk_to(string target){
+	void Monster::talk_to(vector<string> target){
 		if(get_pos()->pp){
 			cout << n;
-			if(target == name()){
+			if(target[0] == name()){
 				cout << " has a deep discussion with itself" << endl;
 			} else {
-				cout << " talks to " << target << endl;
+				cout << " talks to " << target[0] << endl;
 			}
 		}
 	}

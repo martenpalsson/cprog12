@@ -4,6 +4,7 @@
 #include "object.h"
 #include "character.h"
 #include <iostream>
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -14,10 +15,11 @@ namespace game {
 		void look();
 		void look(string target);
 
-		virtual void talk_to(string character);
 		void pick_up(string item);
 		void use(string item);
+		void print_items();
 
+		virtual void talk_to(vector<string> character);
 		virtual void fight(string character) = 0;
 		virtual void speak() = 0;
 	};

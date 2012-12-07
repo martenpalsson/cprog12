@@ -1,6 +1,7 @@
 	
 #include <string>
 #include <iostream>
+#include <vector>
 #include "character.h"
 using namespace std;
 	
@@ -17,6 +18,8 @@ namespace game{
 
 	Character & Character::operator=(const Character & cref){
 		t = cref.type();
+		att = cref.attack();
+		def = cref.defense();
 		n = cref.name();
 		hp = cref.health();
 		curr_pos = cref.get_pos();
@@ -29,6 +32,13 @@ namespace game{
 	}
 	bool Character::is_player() const{
 		return player;
+	}
+
+	int Character::attack() const{
+		return att;
+	}
+	int Character::defense() const{
+		return def;
 	}
 
 	void Character::speak(string line){
@@ -57,19 +67,55 @@ namespace game{
 		return n;
 	}
 	
-	//Bara spelare kan röra sig
+	//Bara spelare kan röra sig, FIXA
 	void Character::go(string direction){
+		string npc_direction;
+		if(!is_player()){
+			cout << "npc i move" << endl;
+			int dir = rand() % curr_pos->exits.size();
+			int i = 0;
+			for(auto it = curr_pos->exits.begin(); it != curr_pos->exits.end(); ++it){
+				if(i == dir)
+					npc_direction = it->first;
+				i++;
+			}
+		}
+		
 		string from = curr_pos->description();
 		curr_pos->leave(*this);
 		Environment & to = curr_pos->neighbour(direction);
 		if(to == *curr_pos){
-			cout << "You can't go there.." << endl;
-		} else {
-			set_pos(&to);
-			curr_pos->enter(*this);
-			cout << "You have left " << from <<  " and entered " << to.description() << endl;
-		}
+			if(!is_player()){
+				to = curr_pos->neighbour(npc_direction);
+				if(to == *curr_pos){
+					curr_pos->enter(*this);
+					cout << "NPC can't go there.." << endl;
+				}else{
+					set_pos(&to);
+					curr_pos->enter(*this);
+					cout << "NPC have left " << from <<  " and entered " << to.description() << endl;
 
+				}
+			} else {
+				curr_pos->enter(*this);
+				cout << "You can't go there.." << endl;
+			}
+		}
+		set_pos(&to);
+		curr_pos->enter(*this);
+		cout << "You have left " << from <<  " and entered " << to.description() << endl;
+	}
+
+	
+	
+	void Character::get_status(){
+		cout << "--------------------------------" << endl;
+		cout << "Name:  " << name() << endl;
+		cout << "Health: " << health() << endl;
+		cout << "Attack: " << attack() << endl;
+		cout << "Defense: " << defense() << endl;
+		cout << "Current position: " << get_pos()->description() << endl;
+		cout << "--------------------------------" << endl;
 	}
 
 	void Character::drop(string object){
@@ -78,6 +124,7 @@ namespace game{
 		}
 	}
 	void Character::npc_action(){
+		cout << "npc action" << endl;
 	}
 
 	void Character::pick_up(string object){
@@ -87,60 +134,9 @@ namespace game{
 	void Character::use(string item){
 		npc_action();
 	}
-
-	bool Character::action(int act){
-		switch(act){
-			case 0: if(is_player())
-					cout << "Where?" << endl;
-				return false;
-			case 1: dig();
-				return true;
-			case 2: look();
-				return false;
-			case 3: if(is_player())
-					cout << "Fight who?" << endl;
-				return false;
-			case 4: if(is_player())
-					cout << "Talk to who?" << endl;
-				return false;
-			case 5: speak();
-				return false;
-			case 6: if(is_player())
-					cout << "Use what?";
-				return false;
-			case 7: if(is_player())
-					cout << "Need to specify what to take.." << endl;
-				return false;
-			default: if(is_player())
-					 cout << "You cannot perform this move.." << endl;
-				return false;
-			}
-		return false;
-	}
-
-	bool Character::action(int act, string target){
-		switch(act){
-			case 0: go(target);
-				return true;
-			case 1: dig();
-				return true;
-			case 2: look();
-				return false;
-			case 3: fight(target);
-				return true;
-			case 4: talk_to(target);
-				return false;
-			case 5: speak(target);
-				return false;
-			case 6: use(target);
-				return true;
-			case 7: pick_up(target);
-				return true;
-			default: if(is_player()) 
-					cout << "You cannot perform this move.." << endl;
-				return false;
-			}
-		return false; 
+	
+	void Character::print_items(){
+		npc_action();
 	}
 
 };

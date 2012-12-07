@@ -11,14 +11,12 @@ using namespace std;
 
 namespace game {
 	struct Parser {
-		static map<string,function<void(Character *,string)>> cmds2;
-		static map<string,function<void(Character*)>> cmds1;
+		static map<string,function<bool(Character *,string)>> cmds;
 		static vector<string> races;
 		static vector<string> words;
 
-		void init_cmds2(map<string,function<void(Character*,string)>> & cmds2);
-		void init_cmds1(map<string,function<void(Character*)>> & cmds1);
-		void parse_cmd(Character * character,vector<string> & command);
+		void init_cmds(map<string,function<bool(Character*,string)>> & cmds);
+		bool parse_cmd(Character * character,vector<string> & command);
 		void intro();
 		bool check_legal(int cmd);
 		int num_races();

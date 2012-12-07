@@ -111,30 +111,6 @@ game/fast:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
 .PHONY : game/fast
 
-src/boxer.o: src/boxer.cpp.o
-.PHONY : src/boxer.o
-
-# target to build an object file
-src/boxer.cpp.o:
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/boxer.cpp.o
-.PHONY : src/boxer.cpp.o
-
-src/boxer.i: src/boxer.cpp.i
-.PHONY : src/boxer.i
-
-# target to preprocess a source file
-src/boxer.cpp.i:
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/boxer.cpp.i
-.PHONY : src/boxer.cpp.i
-
-src/boxer.s: src/boxer.cpp.s
-.PHONY : src/boxer.s
-
-# target to generate assembly for a file
-src/boxer.cpp.s:
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/boxer.cpp.s
-.PHONY : src/boxer.cpp.s
-
 src/character.o: src/character.cpp.o
 .PHONY : src/character.o
 
@@ -351,6 +327,30 @@ src/parser.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/parser.cpp.s
 .PHONY : src/parser.cpp.s
 
+src/player.o: src/player.cpp.o
+.PHONY : src/player.o
+
+# target to build an object file
+src/player.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/player.cpp.o
+.PHONY : src/player.cpp.o
+
+src/player.i: src/player.cpp.i
+.PHONY : src/player.i
+
+# target to preprocess a source file
+src/player.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
+
+src/player.s: src/player.cpp.s
+.PHONY : src/player.s
+
+# target to generate assembly for a file
+src/player.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
+
 src/troll.o: src/troll.cpp.o
 .PHONY : src/troll.o
 
@@ -384,9 +384,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... game"
 	@echo "... rebuild_cache"
-	@echo "... src/boxer.o"
-	@echo "... src/boxer.i"
-	@echo "... src/boxer.s"
 	@echo "... src/character.o"
 	@echo "... src/character.i"
 	@echo "... src/character.s"
@@ -414,6 +411,9 @@ help:
 	@echo "... src/parser.o"
 	@echo "... src/parser.i"
 	@echo "... src/parser.s"
+	@echo "... src/player.o"
+	@echo "... src/player.i"
+	@echo "... src/player.s"
 	@echo "... src/troll.o"
 	@echo "... src/troll.i"
 	@echo "... src/troll.s"

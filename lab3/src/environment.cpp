@@ -87,6 +87,8 @@ namespace game{
 				if(character.is_player()){
 					pp = false;
 					return;
+				} else {
+					return;
 				}
 			}
 		}

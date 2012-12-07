@@ -1,6 +1,7 @@
 #include "parser.h"
 #include "game.h"
 #include <vector>
+#include <sstream>
 #include <string>
 #include <iostream>
 #include <functional>
@@ -8,8 +9,7 @@
 namespace game {
 	
 	//Alla commands
-	map<string, function<void(Character*)>> Parser::cmds1;
-	map<string, function<void(Character*, string)>> Parser::cmds2;
+	map<string, function<bool(Character*,string)>> Parser::cmds;
 	
 	vector<string> Parser::races = {"Boxer", "Troll"};
 
@@ -19,28 +19,27 @@ namespace game {
 		return race > 0 && race <= (int) races.size();
 	}
 	
-	void Parser::init_cmds2(map<string, function<void(Character*, string)>> & cmds2){
-			cmds2["speak"] = global_speak;
-			cmds2["move"] = global_move;
-			cmds2["talk to"] = global_talk_to;
-			cmds2["pick up"] = global_pick_up;
-			cmds2["fight"] = global_fight;
-			cmds1["look"] = global_look;
+	void Parser::init_cmds(map<string, function<bool(Character*, string)>> & cmds){
+			cmds["speak"] = global_speak;
+			cmds["dig"] = global_dig;
+			cmds["inventory"] = global_inv;
+			cmds["move"] = global_move;
+			cmds["talk"] = global_talk_to;
+			cmds["pick"] = global_pick_up;
+			cmds["fight"] = global_fight;
+			cmds["look"] = global_look;
+			cmds["status"] = global_status;
+			cmds["drop"] = global_drop;
 			
 			//alias
-			cmds2["say"] = global_speak;
-			cmds2["mv"] = global_move;
+			cmds["ls"] = global_look;
+			cmds["say"] = global_speak;
+			cmds["mv"] = global_move;
+			cmds["take"] = global_pick_up;
+			cmds["inv"] = global_inv;
+			cmds["items"] = global_inv;
 //			cmds["exit"] = exit;
 //			cmds["help"] = help;
-	}
-	void Parser::init_cmds1(map<string, function<void(Character*, string)>> & cmds1){
-			cmds1["speak"] = global_speak;
-			cmds1["look"] = global_look;
-//			cmds["exit"] = exit;
-//			cmds["help"] = help;
-			
-			//alias
-			cmds1["say"] = global_speak;
 	}
 
 	int Parser::num_races(){
@@ -48,10 +47,10 @@ namespace game {
 	}
 
 	void Parser::intro(){
-		cout << "-----------------------" << endl;
+		cout << "--------------------------------" << endl;
 		cout << "\tFind Trolle" << endl;
 		cout << "\tAnd kill him.." << endl;
-		cout << "-----------------------" << endl;
+		cout << "--------------------------------" << endl;
 	}
 	bool Parser::check_legal(int cmd){
 		if(cmd == -1){
@@ -65,31 +64,27 @@ namespace game {
 		return true;
 	}
 
-	void Parser::parse_cmd(Character * character, vector<string> & cmd){
+	bool Parser::parse_cmd(Character * character, vector<string> & cmd){
 		auto it = cmds.find(cmd[0]);
 		if(it != cmds.end()){
 			if(cmd.size() > 1){
-				it->second(character,cmd[1]);
+				stringstream ss;
+				for(unsigned i = 1; i < cmd.size(); ++i){
+					ss << cmd[i];
+					if(i != cmd.size()-1)
+						ss << " ";
+				}
+				return it->second(character, ss.str());
 			} else {
-				it->second(character, );	
+				cout << "ny action" << endl;
+				return it->second(character, "");
 			}
+		}else{
+			cout << "No such command" << endl;
+			help();
+			return false;
 		}
-	}/*
-		for(unsigned int i = 0; i < cmds.size(); ++i){
-			if(cmds[i] == cmd[0]){
-				command = i;
-				cmd.erase(cmd.begin());
-				break;
-			}
-		}
-		if(cmd.size() > 0){
-			if(isWord(cmd[0])){
-				cmd.erase(cmd.begin());
-			}
-		}
-		return command;
 	}
-	*/
 	
 	bool Parser::isWord(string word){
 		for(unsigned int i = 0; i < words.size(); i++){

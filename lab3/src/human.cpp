@@ -47,23 +47,26 @@ namespace game{
 		}
 	}
 
-	void Human::talk_to(string character){
-		Character * target = get_pos()->is_character(character);
-		if(target != NULL){
-			cout << "You: ";
-			speak();
-			cout << character << ": "; 
-			target->speak();
+	void Human::talk_to(vector<string> args){
+		for(string arg : args){
+			Character * target = get_pos()->is_character(arg);
+			if(target == NULL)
+				continue;
+			else{
+				cout << "You: ";
+				speak();
+				cout << target->name() << ": "; 
+				target->speak();
+				return;
+			}
 		}
-		else {
-			cout << "No such character here.." << endl;
-		}
+		cout << "No such character here.." << endl;
 	}
 	
 	void Human::pick_up(string object){
 		if(is_player()){
 			Object * obj = get_pos()->pick_up(object);
-			if(obj != NULL){
+			if(obj == NULL){
 				cout << "There is no such object.." << endl;
 			} else {
 				items.push_back(obj);
@@ -93,4 +96,19 @@ namespace game{
 		}
 		cout << "Nothing here.. " << endl;
 	}
+
+	void Human::print_items(){
+		if(items.size() > 0){
+			cout << "Your items: " << endl;
+			cout << "-------------------------------" << endl;
+			for(Object * item : items){
+				cout << item->name() << "\t - \t" << item->description() << endl;
+			}
+			cout << "-------------------------------" << endl;
+			cout << endl;
+		} else {
+			cout << "You have no items.." << endl;
+		}
+	}
+
 };
