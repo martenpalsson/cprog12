@@ -5,9 +5,9 @@
 using namespace std;
 namespace game {
 	
-	Forest::Forest(string description, int id2){
+	Forest::Forest(string name, int id2){
 		id = id2;
-		descr = description;
+		n = name;
 	}
 	
 	void Forest::look(string direction){

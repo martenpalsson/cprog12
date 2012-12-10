@@ -255,6 +255,30 @@ src/human.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/human.cpp.s
 .PHONY : src/human.cpp.s
 
+src/hunter.o: src/hunter.cpp.o
+.PHONY : src/hunter.o
+
+# target to build an object file
+src/hunter.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/hunter.cpp.o
+.PHONY : src/hunter.cpp.o
+
+src/hunter.i: src/hunter.cpp.i
+.PHONY : src/hunter.i
+
+# target to preprocess a source file
+src/hunter.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/hunter.cpp.i
+.PHONY : src/hunter.cpp.i
+
+src/hunter.s: src/hunter.cpp.s
+.PHONY : src/hunter.s
+
+# target to generate assembly for a file
+src/hunter.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/hunter.cpp.s
+.PHONY : src/hunter.cpp.s
+
 src/monster.o: src/monster.cpp.o
 .PHONY : src/monster.o
 
@@ -402,6 +426,9 @@ help:
 	@echo "... src/human.o"
 	@echo "... src/human.i"
 	@echo "... src/human.s"
+	@echo "... src/hunter.o"
+	@echo "... src/hunter.i"
+	@echo "... src/hunter.s"
 	@echo "... src/monster.o"
 	@echo "... src/monster.i"
 	@echo "... src/monster.s"

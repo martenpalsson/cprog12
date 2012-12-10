@@ -30,8 +30,11 @@ namespace game {
 			cmds["look"] = global_look;
 			cmds["status"] = global_status;
 			cmds["drop"] = global_drop;
+			cmds["use"] = global_use;
 			
 			//alias
+			cmds["equip"] = global_use;
+			cmds["attack"] = global_fight;
 			cmds["ls"] = global_look;
 			cmds["say"] = global_speak;
 			cmds["mv"] = global_move;
@@ -51,6 +54,7 @@ namespace game {
 		cout << "\tFind Trolle" << endl;
 		cout << "\tAnd kill him.." << endl;
 		cout << "--------------------------------" << endl;
+		cout << endl;
 	}
 	bool Parser::check_legal(int cmd){
 		if(cmd == -1){
@@ -74,9 +78,12 @@ namespace game {
 					if(i != cmd.size()-1)
 						ss << " ";
 				}
+				if(character->is_player())
+					cout << endl;
 				return it->second(character, ss.str());
 			} else {
-				cout << "ny action" << endl;
+				if(character->is_player())
+					cout << endl;
 				return it->second(character, "");
 			}
 		}else{

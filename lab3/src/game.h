@@ -5,7 +5,9 @@
 #include "character.h"
 #include "environment.h"
 #include "object.h"
+#include "hunter.h"
 #include "parser.h"
+#include "forest.h"
 #include "house.h"
 #include "player.h"
 #include "troll.h" 
@@ -21,7 +23,7 @@ void init_chars(vector<Character*> & characters, Environment * start, vector<Env
 
 void init_game(Parser parser, vector<Character*> & characters, Environment * & start, vector<Environment*> & map);
 
-void gen_npc_actions(vector<Character*> & npc, Parser parser);
+bool gen_npc_actions(vector<Character*> & npc, Parser parser);
 
 void split_line(vector<string> & tokens, string cmd);
 
@@ -48,4 +50,6 @@ bool global_status(Character * c, string a);
 bool global_drop(Character * c, string item);
 
 bool global_dig(Character * c, string a);
+
+bool global_use(Character * c, string item);
 #endif

@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp
-string
--
-iostream
--
-vector
--
-character.h
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
-
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 string
 -
@@ -25,20 +15,6 @@ environment.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 object.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
-
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.cpp
-environment.h
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
-object.h
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
-character.h
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
-map
--
-string
--
-iostream
--
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 character.h
@@ -50,6 +26,14 @@ string
 map
 -
 vector
+-
+
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/forest.h
+environment.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+string
+-
+iostream
 -
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp
@@ -77,8 +61,12 @@ environment.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 object.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+hunter.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.h
 parser.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
+forest.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/forest.h
 house.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
 player.h
@@ -110,9 +98,17 @@ vector
 string
 -
 
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.h
+monster.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.h
+string
+-
+
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.h
 character.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+vector
+-
 string
 -
 

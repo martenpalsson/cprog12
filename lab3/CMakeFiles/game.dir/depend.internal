@@ -20,10 +20,12 @@ CMakeFiles/game.dir/src/forest.cpp.o
 CMakeFiles/game.dir/src/game.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/forest.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
@@ -41,6 +43,13 @@ CMakeFiles/game.dir/src/human.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.cpp
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+CMakeFiles/game.dir/src/hunter.cpp.o
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.cpp
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
 CMakeFiles/game.dir/src/monster.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
@@ -55,9 +64,11 @@ CMakeFiles/game.dir/src/object.cpp.o
 CMakeFiles/game.dir/src/parser.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/forest.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp

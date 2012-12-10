@@ -19,10 +19,12 @@ CMakeFiles/game.dir/src/forest.cpp.o: src/object.h
 
 CMakeFiles/game.dir/src/game.cpp.o: src/character.h
 CMakeFiles/game.dir/src/game.cpp.o: src/environment.h
+CMakeFiles/game.dir/src/game.cpp.o: src/forest.h
 CMakeFiles/game.dir/src/game.cpp.o: src/game.cpp
 CMakeFiles/game.dir/src/game.cpp.o: src/game.h
 CMakeFiles/game.dir/src/game.cpp.o: src/house.h
 CMakeFiles/game.dir/src/game.cpp.o: src/human.h
+CMakeFiles/game.dir/src/game.cpp.o: src/hunter.h
 CMakeFiles/game.dir/src/game.cpp.o: src/monster.h
 CMakeFiles/game.dir/src/game.cpp.o: src/object.h
 CMakeFiles/game.dir/src/game.cpp.o: src/parser.h
@@ -41,6 +43,13 @@ CMakeFiles/game.dir/src/human.cpp.o: src/human.cpp
 CMakeFiles/game.dir/src/human.cpp.o: src/human.h
 CMakeFiles/game.dir/src/human.cpp.o: src/object.h
 
+CMakeFiles/game.dir/src/hunter.cpp.o: src/character.h
+CMakeFiles/game.dir/src/hunter.cpp.o: src/environment.h
+CMakeFiles/game.dir/src/hunter.cpp.o: src/hunter.cpp
+CMakeFiles/game.dir/src/hunter.cpp.o: src/hunter.h
+CMakeFiles/game.dir/src/hunter.cpp.o: src/monster.h
+CMakeFiles/game.dir/src/hunter.cpp.o: src/object.h
+
 CMakeFiles/game.dir/src/monster.cpp.o: src/character.h
 CMakeFiles/game.dir/src/monster.cpp.o: src/environment.h
 CMakeFiles/game.dir/src/monster.cpp.o: src/monster.cpp
@@ -54,9 +63,11 @@ CMakeFiles/game.dir/src/object.cpp.o: src/object.h
 
 CMakeFiles/game.dir/src/parser.cpp.o: src/character.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/environment.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/forest.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/game.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/house.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/human.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/hunter.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/monster.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/object.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/parser.cpp

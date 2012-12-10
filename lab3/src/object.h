@@ -9,15 +9,15 @@ namespace game{
 	class Character;
 	struct Object{
 		string n;
-		int t;
+		string t;
 		string d;
 		int w;
 		Character * owner;
 
-		Object(string name, int type, string description, int weight);
+		Object(string name, string type, string description, int weight);
 		bool operator==(const Object & oref);
 		string name() const;
-		int type() const;
+		string type() const;
 		string description() const;
 		int weight() const;
 		void set_owner(Character * o);

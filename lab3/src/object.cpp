@@ -5,7 +5,7 @@ using namespace std;
 
 namespace game{
 	
-	Object::Object(string name, int type, string description, int weight){
+	Object::Object(string name, string type, string description, int weight){
 		n = name;
 		t = type;
 		d = description;
@@ -22,7 +22,7 @@ namespace game{
 		return n;
 	}
 
-	int Object::type() const{
+	string Object::type() const{
 		return t;
 	}
 
@@ -37,17 +37,15 @@ namespace game{
 		owner = o;
 	}
 	void Object::event(){
-		cout << "event" << endl;
 		if(owner != NULL){
-			switch(type()){
-				case 0:
-					cout << "svärd event" << endl;
-				default:
-					cout << "event körs för: " << name() << endl;
-					break;
+			if(type() == "weapon"){
+				owner->set_weapon(this);
+			}
+			if(type() == "shield"){
+				owner->set_shield(this);
 			}
 		} else {
-			cout << "ingen äger detta.." << endl;
+			cout << "You don't have this item.." << endl;
 		}
 	}
 

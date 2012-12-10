@@ -10,7 +10,9 @@ namespace game{
 		Troll(string name, int health, Environment * env, bool p);
 		Troll(string name, Environment * env);
 		void fight(string target);
-		
+		Character * choose_target();
+		bool take_damage(Character * enemy, int damage);
+		void die();
 	};
 };
 

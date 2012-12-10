@@ -18,12 +18,13 @@ namespace game{
 
 	Character & Character::operator=(const Character & cref){
 		t = cref.type();
-		att = cref.attack();
-		def = cref.defense();
+		weapon = cref.get_weapon();
+		shield = cref.get_shield();
 		n = cref.name();
 		hp = cref.health();
 		curr_pos = cref.get_pos();
 		player = cref.is_player();
+		alive = cref.is_alive();
 		return *this;
 	}
 	
@@ -33,14 +34,27 @@ namespace game{
 	bool Character::is_player() const{
 		return player;
 	}
-
-	int Character::attack() const{
-		return att;
-	}
-	int Character::defense() const{
-		return def;
+	
+	Object * Character::find_item(string name){
+		return NULL;
 	}
 
+	Object * Character::get_weapon() const{
+		return weapon;
+	}
+	Object * Character::get_shield() const{
+		return shield;
+	}
+
+	void Character::set_weapon(Object * object){
+		cout << "Equipped " << object->name() << endl;
+		weapon = object;
+	}
+
+	void Character::set_shield(Object * obj){
+		cout << "Equipped " << obj->name() << endl;
+		shield = obj;
+	}
 	void Character::speak(string line){
 		if(get_pos()->pp){
 			if(is_player()){
@@ -67,11 +81,9 @@ namespace game{
 		return n;
 	}
 	
-	//Bara spelare kan röra sig, FIXA
 	void Character::go(string direction){
 		string npc_direction;
 		if(!is_player()){
-			cout << "npc i move" << endl;
 			int dir = rand() % curr_pos->exits.size();
 			int i = 0;
 			for(auto it = curr_pos->exits.begin(); it != curr_pos->exits.end(); ++it){
@@ -80,30 +92,31 @@ namespace game{
 				i++;
 			}
 		}
-		
-		string from = curr_pos->description();
+		string from = curr_pos->name();
 		curr_pos->leave(*this);
 		Environment & to = curr_pos->neighbour(direction);
 		if(to == *curr_pos){
 			if(!is_player()){
-				to = curr_pos->neighbour(npc_direction);
-				if(to == *curr_pos){
+				Environment & npc_to = curr_pos->neighbour(npc_direction); 
+				if(npc_to == *curr_pos){
 					curr_pos->enter(*this);
 					cout << "NPC can't go there.." << endl;
+					return;
 				}else{
-					set_pos(&to);
+					set_pos(&npc_to);
 					curr_pos->enter(*this);
-					cout << "NPC have left " << from <<  " and entered " << to.description() << endl;
+					return;
 
 				}
 			} else {
 				curr_pos->enter(*this);
 				cout << "You can't go there.." << endl;
+				return;
 			}
 		}
 		set_pos(&to);
 		curr_pos->enter(*this);
-		cout << "You have left " << from <<  " and entered " << to.description() << endl;
+		cout << "You have left " << from <<  " and entered " << to.name() << endl;
 	}
 
 	
@@ -112,17 +125,46 @@ namespace game{
 		cout << "--------------------------------" << endl;
 		cout << "Name:  " << name() << endl;
 		cout << "Health: " << health() << endl;
-		cout << "Attack: " << attack() << endl;
-		cout << "Defense: " << defense() << endl;
-		cout << "Current position: " << get_pos()->description() << endl;
+		if(get_weapon() != NULL)
+			cout << "Weapon: " << get_weapon()->name() << endl;
+		else 
+			cout << "Weapon: None" << endl;
+		if(get_shield() != NULL)
+			cout << "Shield: " << get_shield()->name() << endl;
+		else 
+			cout << "Shield: None" << endl;
+		cout << "Current position: " << get_pos()->name() << endl;
 		cout << "--------------------------------" << endl;
+		cout << endl;
 	}
-
+	
 	void Character::drop(string object){
 		if(get_pos()->pp){
 			cout << "Dropping " << object << endl;
 		}
 	}
+
+	bool Character::attack(Character * enemy){
+		int damage;
+		if(!is_player()){
+			damage = 10;
+			if(get_weapon() != NULL){
+				damage += 20;
+			}
+		}else{
+			damage = 5;
+			if(get_weapon() != NULL)
+				damage += 15;
+		}
+		bool defeated = enemy->take_damage(this,damage);
+		if(defeated){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 	void Character::npc_action(){
 		cout << "npc action" << endl;
 	}
@@ -133,6 +175,10 @@ namespace game{
 
 	void Character::use(string item){
 		npc_action();
+	}
+
+	bool Character::is_alive() const{
+		return alive;
 	}
 	
 	void Character::print_items(){

@@ -14,6 +14,7 @@ namespace game{
 */
 	Environment & Environment::operator=(const Environment & e){
 		pp = e.pp;
+		n = name();
 		exits = e.exits;
 		descr = e.descr;
 		objects = e.objects;
@@ -21,6 +22,10 @@ namespace game{
 		characters = e.characters;
 		id = e.id;
 		return *this;
+	}
+
+	void Environment::set_description(string description){
+		descr = description;
 	}
 
 	bool Environment::operator==(const Environment & env){
@@ -38,6 +43,9 @@ namespace game{
 		}
 		return NULL;
 	}
+	string Environment::name() const{
+		return n;
+	}
 
 	int Environment::get_id() const{
 		return id;
@@ -50,12 +58,12 @@ namespace game{
 
 	void Environment::print_characters(){
 		if(characters.size() > 1){
-			cout << "Current residents of " << description() << endl;
+			cout << "Current residents of " << name() << endl;
 			for(unsigned int i = 0; i < characters.size(); i++){
 				cout << "\t" << characters[i]->name() << endl;
 			}
 		} else {
-			cout << "You are alone in " << description() << endl;
+			cout << "You are alone in " << name() << endl;
 		}
 	}
 	bool Environment::set_neighbour(string direction, Environment * e){
@@ -74,9 +82,11 @@ namespace game{
 	//Get a description of all the possible directions from the current 
 	//environment
 	void Environment::directions() const{
-		cout << "You can move: " << endl;
+		cout << "When you look around, you see: " << endl;
 		for(auto iter = exits.begin(); iter != exits.end(); iter++){
-			cout << "\t" << iter->first << endl;
+			if(iter->second->name() == "Secret room")
+				continue;
+			cout << "\t" << iter->second->name() << " (" << iter->first << ")" << endl;
 		}
 	}
 	
@@ -113,23 +123,22 @@ namespace game{
 	}
 
 	Object * Environment::hidden_items(){
-		if(hidden_objects.size() < 0){
+		if(hidden_objects.size() > 0){
 			return hidden_objects.front();
 		}
 		return NULL;
 	}
 	
 	void Environment::drop(Object * obj){
-		cout << "You dropped " << obj->description() << endl;
 		objects.push_back(obj);
 	}
 
-	bool Environment::find_object(string object){
+	Object * Environment::find_object(string object){
 		for(auto it=objects.begin(); it != objects.end(); it++){
 			if((*it)->name() == object){
-				return true;
+				return *it;
 			}
 		}
-		return false;
+		return NULL;
 	}
 };

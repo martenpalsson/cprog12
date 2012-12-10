@@ -49,32 +49,9 @@ include CMakeFiles/game.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/game.dir/flags.make
 
-CMakeFiles/game.dir/src/character.cpp.o: CMakeFiles/game.dir/flags.make
-CMakeFiles/game.dir/src/character.cpp.o: src/character.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/character.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/character.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp
-
-CMakeFiles/game.dir/src/character.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/character.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp > CMakeFiles/game.dir/src/character.cpp.i
-
-CMakeFiles/game.dir/src/character.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/character.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp -o CMakeFiles/game.dir/src/character.cpp.s
-
-CMakeFiles/game.dir/src/character.cpp.o.requires:
-.PHONY : CMakeFiles/game.dir/src/character.cpp.o.requires
-
-CMakeFiles/game.dir/src/character.cpp.o.provides: CMakeFiles/game.dir/src/character.cpp.o.requires
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/character.cpp.o.provides.build
-.PHONY : CMakeFiles/game.dir/src/character.cpp.o.provides
-
-CMakeFiles/game.dir/src/character.cpp.o.provides.build: CMakeFiles/game.dir/src/character.cpp.o
-
 CMakeFiles/game.dir/src/environment.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/environment.cpp.o: src/environment.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/environment.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/environment.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.cpp
 
@@ -94,6 +71,29 @@ CMakeFiles/game.dir/src/environment.cpp.o.provides: CMakeFiles/game.dir/src/envi
 .PHONY : CMakeFiles/game.dir/src/environment.cpp.o.provides
 
 CMakeFiles/game.dir/src/environment.cpp.o.provides.build: CMakeFiles/game.dir/src/environment.cpp.o
+
+CMakeFiles/game.dir/src/character.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/character.cpp.o: src/character.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/character.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/character.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp
+
+CMakeFiles/game.dir/src/character.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/character.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp > CMakeFiles/game.dir/src/character.cpp.i
+
+CMakeFiles/game.dir/src/character.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/character.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp -o CMakeFiles/game.dir/src/character.cpp.s
+
+CMakeFiles/game.dir/src/character.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/character.cpp.o.requires
+
+CMakeFiles/game.dir/src/character.cpp.o.provides: CMakeFiles/game.dir/src/character.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/character.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/character.cpp.o.provides
+
+CMakeFiles/game.dir/src/character.cpp.o.provides.build: CMakeFiles/game.dir/src/character.cpp.o
 
 CMakeFiles/game.dir/src/forest.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/forest.cpp.o: src/forest.cpp
@@ -141,32 +141,55 @@ CMakeFiles/game.dir/src/house.cpp.o.provides: CMakeFiles/game.dir/src/house.cpp.
 
 CMakeFiles/game.dir/src/house.cpp.o.provides.build: CMakeFiles/game.dir/src/house.cpp.o
 
-CMakeFiles/game.dir/src/monster.cpp.o: CMakeFiles/game.dir/flags.make
-CMakeFiles/game.dir/src/monster.cpp.o: src/monster.cpp
+CMakeFiles/game.dir/src/hunter.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/hunter.cpp.o: src/hunter.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/monster.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/monster.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/hunter.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/hunter.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.cpp
 
-CMakeFiles/game.dir/src/monster.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/monster.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.cpp > CMakeFiles/game.dir/src/monster.cpp.i
+CMakeFiles/game.dir/src/hunter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/hunter.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.cpp > CMakeFiles/game.dir/src/hunter.cpp.i
 
-CMakeFiles/game.dir/src/monster.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/monster.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.cpp -o CMakeFiles/game.dir/src/monster.cpp.s
+CMakeFiles/game.dir/src/hunter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/hunter.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.cpp -o CMakeFiles/game.dir/src/hunter.cpp.s
 
-CMakeFiles/game.dir/src/monster.cpp.o.requires:
-.PHONY : CMakeFiles/game.dir/src/monster.cpp.o.requires
+CMakeFiles/game.dir/src/hunter.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/hunter.cpp.o.requires
 
-CMakeFiles/game.dir/src/monster.cpp.o.provides: CMakeFiles/game.dir/src/monster.cpp.o.requires
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/monster.cpp.o.provides.build
-.PHONY : CMakeFiles/game.dir/src/monster.cpp.o.provides
+CMakeFiles/game.dir/src/hunter.cpp.o.provides: CMakeFiles/game.dir/src/hunter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/hunter.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/hunter.cpp.o.provides
 
-CMakeFiles/game.dir/src/monster.cpp.o.provides.build: CMakeFiles/game.dir/src/monster.cpp.o
+CMakeFiles/game.dir/src/hunter.cpp.o.provides.build: CMakeFiles/game.dir/src/hunter.cpp.o
+
+CMakeFiles/game.dir/src/parser.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/parser.cpp.o: src/parser.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/parser.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/parser.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp
+
+CMakeFiles/game.dir/src/parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/parser.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp > CMakeFiles/game.dir/src/parser.cpp.i
+
+CMakeFiles/game.dir/src/parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/parser.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp -o CMakeFiles/game.dir/src/parser.cpp.s
+
+CMakeFiles/game.dir/src/parser.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/parser.cpp.o.requires
+
+CMakeFiles/game.dir/src/parser.cpp.o.provides: CMakeFiles/game.dir/src/parser.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/parser.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/parser.cpp.o.provides
+
+CMakeFiles/game.dir/src/parser.cpp.o.provides.build: CMakeFiles/game.dir/src/parser.cpp.o
 
 CMakeFiles/game.dir/src/object.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/object.cpp.o: src/object.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/object.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/object.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.cpp
 
@@ -186,29 +209,6 @@ CMakeFiles/game.dir/src/object.cpp.o.provides: CMakeFiles/game.dir/src/object.cp
 .PHONY : CMakeFiles/game.dir/src/object.cpp.o.provides
 
 CMakeFiles/game.dir/src/object.cpp.o.provides.build: CMakeFiles/game.dir/src/object.cpp.o
-
-CMakeFiles/game.dir/src/player.cpp.o: CMakeFiles/game.dir/flags.make
-CMakeFiles/game.dir/src/player.cpp.o: src/player.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_7)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/player.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/player.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp
-
-CMakeFiles/game.dir/src/player.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/player.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp > CMakeFiles/game.dir/src/player.cpp.i
-
-CMakeFiles/game.dir/src/player.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/player.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp -o CMakeFiles/game.dir/src/player.cpp.s
-
-CMakeFiles/game.dir/src/player.cpp.o.requires:
-.PHONY : CMakeFiles/game.dir/src/player.cpp.o.requires
-
-CMakeFiles/game.dir/src/player.cpp.o.provides: CMakeFiles/game.dir/src/player.cpp.o.requires
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/player.cpp.o.provides.build
-.PHONY : CMakeFiles/game.dir/src/player.cpp.o.provides
-
-CMakeFiles/game.dir/src/player.cpp.o.provides.build: CMakeFiles/game.dir/src/player.cpp.o
 
 CMakeFiles/game.dir/src/human.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/human.cpp.o: src/human.cpp
@@ -233,32 +233,55 @@ CMakeFiles/game.dir/src/human.cpp.o.provides: CMakeFiles/game.dir/src/human.cpp.
 
 CMakeFiles/game.dir/src/human.cpp.o.provides.build: CMakeFiles/game.dir/src/human.cpp.o
 
-CMakeFiles/game.dir/src/game.cpp.o: CMakeFiles/game.dir/flags.make
-CMakeFiles/game.dir/src/game.cpp.o: src/game.cpp
+CMakeFiles/game.dir/src/player.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/player.cpp.o: src/player.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_9)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/player.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/player.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp
 
-CMakeFiles/game.dir/src/game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/game.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
+CMakeFiles/game.dir/src/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/player.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp > CMakeFiles/game.dir/src/player.cpp.i
 
-CMakeFiles/game.dir/src/game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/game.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
+CMakeFiles/game.dir/src/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/player.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp -o CMakeFiles/game.dir/src/player.cpp.s
 
-CMakeFiles/game.dir/src/game.cpp.o.requires:
-.PHONY : CMakeFiles/game.dir/src/game.cpp.o.requires
+CMakeFiles/game.dir/src/player.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/player.cpp.o.requires
 
-CMakeFiles/game.dir/src/game.cpp.o.provides: CMakeFiles/game.dir/src/game.cpp.o.requires
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game.cpp.o.provides.build
-.PHONY : CMakeFiles/game.dir/src/game.cpp.o.provides
+CMakeFiles/game.dir/src/player.cpp.o.provides: CMakeFiles/game.dir/src/player.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/player.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/player.cpp.o.provides
 
-CMakeFiles/game.dir/src/game.cpp.o.provides.build: CMakeFiles/game.dir/src/game.cpp.o
+CMakeFiles/game.dir/src/player.cpp.o.provides.build: CMakeFiles/game.dir/src/player.cpp.o
+
+CMakeFiles/game.dir/src/monster.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/monster.cpp.o: src/monster.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/monster.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/monster.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.cpp
+
+CMakeFiles/game.dir/src/monster.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/monster.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.cpp > CMakeFiles/game.dir/src/monster.cpp.i
+
+CMakeFiles/game.dir/src/monster.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/monster.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.cpp -o CMakeFiles/game.dir/src/monster.cpp.s
+
+CMakeFiles/game.dir/src/monster.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/monster.cpp.o.requires
+
+CMakeFiles/game.dir/src/monster.cpp.o.provides: CMakeFiles/game.dir/src/monster.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/monster.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/monster.cpp.o.provides
+
+CMakeFiles/game.dir/src/monster.cpp.o.provides.build: CMakeFiles/game.dir/src/monster.cpp.o
 
 CMakeFiles/game.dir/src/troll.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/troll.cpp.o: src/troll.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/troll.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/troll.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.cpp
 
@@ -279,57 +302,59 @@ CMakeFiles/game.dir/src/troll.cpp.o.provides: CMakeFiles/game.dir/src/troll.cpp.
 
 CMakeFiles/game.dir/src/troll.cpp.o.provides.build: CMakeFiles/game.dir/src/troll.cpp.o
 
-CMakeFiles/game.dir/src/parser.cpp.o: CMakeFiles/game.dir/flags.make
-CMakeFiles/game.dir/src/parser.cpp.o: src/parser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_11)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/parser.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/parser.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp
+CMakeFiles/game.dir/src/game.cpp.o: CMakeFiles/game.dir/flags.make
+CMakeFiles/game.dir/src/game.cpp.o: src/game.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles $(CMAKE_PROGRESS_12)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp
 
-CMakeFiles/game.dir/src/parser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/parser.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp > CMakeFiles/game.dir/src/parser.cpp.i
+CMakeFiles/game.dir/src/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/game.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
 
-CMakeFiles/game.dir/src/parser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/parser.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp -o CMakeFiles/game.dir/src/parser.cpp.s
+CMakeFiles/game.dir/src/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/game.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
 
-CMakeFiles/game.dir/src/parser.cpp.o.requires:
-.PHONY : CMakeFiles/game.dir/src/parser.cpp.o.requires
+CMakeFiles/game.dir/src/game.cpp.o.requires:
+.PHONY : CMakeFiles/game.dir/src/game.cpp.o.requires
 
-CMakeFiles/game.dir/src/parser.cpp.o.provides: CMakeFiles/game.dir/src/parser.cpp.o.requires
-	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/parser.cpp.o.provides.build
-.PHONY : CMakeFiles/game.dir/src/parser.cpp.o.provides
+CMakeFiles/game.dir/src/game.cpp.o.provides: CMakeFiles/game.dir/src/game.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game.cpp.o.provides.build
+.PHONY : CMakeFiles/game.dir/src/game.cpp.o.provides
 
-CMakeFiles/game.dir/src/parser.cpp.o.provides.build: CMakeFiles/game.dir/src/parser.cpp.o
+CMakeFiles/game.dir/src/game.cpp.o.provides.build: CMakeFiles/game.dir/src/game.cpp.o
 
 # Object files for target game
 game_OBJECTS = \
-"CMakeFiles/game.dir/src/character.cpp.o" \
 "CMakeFiles/game.dir/src/environment.cpp.o" \
+"CMakeFiles/game.dir/src/character.cpp.o" \
 "CMakeFiles/game.dir/src/forest.cpp.o" \
 "CMakeFiles/game.dir/src/house.cpp.o" \
-"CMakeFiles/game.dir/src/monster.cpp.o" \
+"CMakeFiles/game.dir/src/hunter.cpp.o" \
+"CMakeFiles/game.dir/src/parser.cpp.o" \
 "CMakeFiles/game.dir/src/object.cpp.o" \
-"CMakeFiles/game.dir/src/player.cpp.o" \
 "CMakeFiles/game.dir/src/human.cpp.o" \
-"CMakeFiles/game.dir/src/game.cpp.o" \
+"CMakeFiles/game.dir/src/player.cpp.o" \
+"CMakeFiles/game.dir/src/monster.cpp.o" \
 "CMakeFiles/game.dir/src/troll.cpp.o" \
-"CMakeFiles/game.dir/src/parser.cpp.o"
+"CMakeFiles/game.dir/src/game.cpp.o"
 
 # External object files for target game
 game_EXTERNAL_OBJECTS =
 
-game: CMakeFiles/game.dir/src/character.cpp.o
 game: CMakeFiles/game.dir/src/environment.cpp.o
+game: CMakeFiles/game.dir/src/character.cpp.o
 game: CMakeFiles/game.dir/src/forest.cpp.o
 game: CMakeFiles/game.dir/src/house.cpp.o
-game: CMakeFiles/game.dir/src/monster.cpp.o
-game: CMakeFiles/game.dir/src/object.cpp.o
-game: CMakeFiles/game.dir/src/player.cpp.o
-game: CMakeFiles/game.dir/src/human.cpp.o
-game: CMakeFiles/game.dir/src/game.cpp.o
-game: CMakeFiles/game.dir/src/troll.cpp.o
+game: CMakeFiles/game.dir/src/hunter.cpp.o
 game: CMakeFiles/game.dir/src/parser.cpp.o
+game: CMakeFiles/game.dir/src/object.cpp.o
+game: CMakeFiles/game.dir/src/human.cpp.o
+game: CMakeFiles/game.dir/src/player.cpp.o
+game: CMakeFiles/game.dir/src/monster.cpp.o
+game: CMakeFiles/game.dir/src/troll.cpp.o
+game: CMakeFiles/game.dir/src/game.cpp.o
 game: CMakeFiles/game.dir/build.make
 game: CMakeFiles/game.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable game"
@@ -339,17 +364,18 @@ game: CMakeFiles/game.dir/link.txt
 CMakeFiles/game.dir/build: game
 .PHONY : CMakeFiles/game.dir/build
 
-CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/character.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/environment.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/character.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/forest.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/house.cpp.o.requires
-CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/monster.cpp.o.requires
-CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/object.cpp.o.requires
-CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/player.cpp.o.requires
-CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/human.cpp.o.requires
-CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/game.cpp.o.requires
-CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/troll.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/hunter.cpp.o.requires
 CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/parser.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/object.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/human.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/player.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/monster.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/troll.cpp.o.requires
+CMakeFiles/game.dir/requires: CMakeFiles/game.dir/src/game.cpp.o.requires
 .PHONY : CMakeFiles/game.dir/requires
 
 CMakeFiles/game.dir/clean:

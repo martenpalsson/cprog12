@@ -7,15 +7,14 @@ using namespace std;
 namespace game{
 	
 	void Human::look(){
+		cout << get_pos()->description() << endl;
 		bool alone = true;
 		if(get_pos()->characters.size() > 1){
 			alone = false;
 		}
-		cout << "You are ";
 		if(alone){
-			cout << "alone ";
+		cout << "You are alone " << endl;
 		}
-		cout << "in " << get_pos()->description() << endl;
 		if(!alone){
 			get_pos()->print_characters();
 		}
@@ -35,16 +34,26 @@ namespace game{
 			cout << "no items here" << endl;
 		}
 		get_pos()->directions();
+		cout << endl;
 	}
 
 	void Human::look(string target){
-		cout << "You look at: " << target << endl;
-		if(get_pos()->find_object(target)){
-			cout << "\tit's an object!" << endl;
+		Object * obj = get_pos()->find_object(target);
+		if(obj != NULL){
+			cout << "You see: " << endl;
+			cout << "\t" << obj->description() << endl;
+			cout << endl;
+			return;
 		}
-		if(get_pos()->is_character(target)){
-			cout << "\tit's a character!" << endl;
+		Character * ch = get_pos()->is_character(target);
+		if(ch != NULL){
+			cout << "You look at: " << endl;
+			cout << "\t" << ch->name() << endl;
+			cout << endl;
+			return;
 		}
+		cout << "Can't find " << target << ".." << endl;
+		cout << endl;
 	}
 
 	void Human::talk_to(vector<string> args){
@@ -53,10 +62,10 @@ namespace game{
 			if(target == NULL)
 				continue;
 			else{
-				cout << "You: ";
-				speak();
-				cout << target->name() << ": "; 
+				cout << "You (" << name() << "): ";
+				speak(); 
 				target->speak();
+				cout << endl;
 				return;
 			}
 		}
@@ -69,8 +78,8 @@ namespace game{
 			if(obj == NULL){
 				cout << "There is no such object.." << endl;
 			} else {
+				obj->set_owner(this);
 				items.push_back(obj);
-				cout << "Took " << object << endl;
 			}
 		}else{
 			npc_action();
@@ -86,6 +95,7 @@ namespace game{
 		}
 		cout << "Found no such item" << endl;
 	}
+
 
 	void Human::dig(){
 		Object * item = get_pos()->hidden_items();
@@ -108,6 +118,7 @@ namespace game{
 			cout << endl;
 		} else {
 			cout << "You have no items.." << endl;
+			cout << endl;
 		}
 	}
 

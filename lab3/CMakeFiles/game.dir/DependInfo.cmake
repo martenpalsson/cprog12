@@ -10,6 +10,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/game.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/house.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/human.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/human.cpp.o"
+  "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/hunter.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/monster.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/object.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/parser.cpp.o"

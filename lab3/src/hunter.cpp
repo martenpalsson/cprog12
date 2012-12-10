@@ -1,52 +1,30 @@
-#include "troll.h"
-
+#include "hunter.h"
+#include <vector>
 #include <string>
 #include <iostream>
-
 using namespace std;
 
 namespace game{
-	Troll::Troll(string name, int health, Environment * e, bool p){
-		n = name;
+	Hunter::Hunter(string name, int health, Environment * env, Character * enemy){
 		hp = health;
-		set_pos(e);
-		t = "troll";
-		player = p;
-		alive = true;
-	}
-
-	Troll::Troll(string name, Environment * e){
 		n = name;
-//		srand(time(NULL));
-		hp = (rand() % 30) + 10;
-		t = "troll";
-		set_pos(e);
-		player = false;
+		set_pos(env);
 		alive = true;
+		weapon = new Object("Bow", "bow", "a fine bow", 40);
+		shield = NULL;
+		player = false;
+		t = "hunter";
+		enemies.push_back(enemy);
 	}
-	
 
-	void Troll::fight(string target){
+	void Hunter::fight(string target){
 		if(get_pos()->pp){
 			Character * enemy = get_pos()->is_character(target);
 			cout << n << " attacks " << enemy->name() << "!" << endl;
 			attack(enemy);
 		}
 	}
-
-	Character * Troll::choose_target(){
-		int t = rand() % get_pos()->characters.size();
-		Character * target = get_pos()->characters[t];
-		return target;
-	}
-
-	void Troll::die(){
-		cout << "Nu körs die i troll" << endl;
-		get_pos()->leave(*this);
-		delete this;
-	}
-
-	bool Troll::take_damage(Character * enemy, int attack_power){
+	bool Hunter::take_damage(Character * enemy, int attack_power){
 		enemies.push_back(enemy);
 		int defense = 5;
 		int damage = attack_power-defense;
@@ -63,4 +41,9 @@ namespace game{
 		}
 		return false;
 	}
+	void Hunter::die(){
+		get_pos()->leave(*this);
+		delete this;
+	}
 };
+

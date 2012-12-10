@@ -24,12 +24,13 @@ int main(){
 	vector<string> tokens;
 	string command = "";
 	Character * player = npc.front();
-	
-	while(true){
+	bool dead = false;
+
+	while(!dead){
 		bool pf = false;
 		while(!pf){
 			tokens.clear();
-			cout << ">";
+			cout << player->get_pos()->name() << ">";
 			getline(cin,command);
 			if(command == "exit"){
 				cout << "byebye" << endl;
@@ -39,31 +40,57 @@ int main(){
 			pf = parser.parse_cmd(player,tokens);
 		}
 		//Här utför npc:erna sina moves
-		gen_npc_actions(npc,parser);
+		dead = gen_npc_actions(npc,parser);
 		cout << endl;
+		if(!(player->is_alive())){
+			cout << "Game Over" << endl;
+			return 0;
+		}else{
+			if(player->find_item("Graal") != NULL){
+				cout << "You have found a nice Graal, well done!" << endl;
+				break;
+			}
+
+		}
 	}
+	cout << "Game over!" << endl;
 	return 0;
 }
 	
 void init_map(Environment * & start, vector<Environment*> & map){
-	House * a = new House("hus1",0);
-	House * b = new House("hus2",1);
-	House * c = new House("hus3",2);
-	House * d = new House("hus4",3);
-	a->set_neighbour("east", b);
-	a->set_neighbour("north", c);
-	b->set_neighbour("west", a);
-	b->set_neighbour("north", d);
-	c->set_neighbour("east", d);
-	c->set_neighbour("south", a);
-	d->set_neighbour("west", c);
-	d->set_neighbour("south", b);
+	House * home = new House("Home",0);
+	Forest * forest = new Forest("Forest",1);
+	Forest * western_forest = new Forest("Western Forest",2);
+	House * old_house = new House("Old House",3);
+	House * hidden_room = new House("Secret room", 4);
+	House * castle = new House("Castle", 5);
 
-	map.push_back(a);
-	map.push_back(b);
-	map.push_back(c);
-	map.push_back(d);
-	start = a;
+	home->set_neighbour("east", forest);
+	home->set_neighbour("north", western_forest);
+	forest->set_neighbour("west", home);
+	forest->set_neighbour("north", old_house);
+	western_forest->set_neighbour("east", old_house);
+	western_forest->set_neighbour("south", home);
+	old_house->set_neighbour("west", western_forest);
+	old_house->set_neighbour("south", forest);
+	western_forest->set_neighbour("west", hidden_room);
+	hidden_room->set_neighbour("east", home);
+	forest->set_neighbour("east", castle);
+	castle->set_neighbour("west", forest);
+
+	home->set_description("This is your home");
+	forest->set_description("This is a fine forest");
+	western_forest->set_description("It's a dense and dark forest, it's difficult to see anything");
+	old_house->set_description("An old house, seems abandoned..");
+	castle->set_description("A standard castle");
+
+	map.push_back(home);
+	map.push_back(forest);
+	map.push_back(western_forest);
+	map.push_back(old_house);
+	map.push_back(castle);
+	map.push_back(hidden_room);
+	start = home;
 }
 
 
@@ -76,10 +103,12 @@ void init_map(Environment * & start, vector<Environment*> & map){
 	}
 
 	void init_objects(vector<Environment*> & map){
-		Object * sword = new Object("Sword", 0, "A fine sword", 5);
-		Object * shield = new Object("Shield", 1, "A fine shield", 6);
+		Object * graal = new Object("Graal", "object", "A fine Graal", 0);
+		Object * sword = new Object("Sword", "weapon", "A fine sword", 5);
+		Object * shield = new Object("Shield", "shield", "A fine shield", 6);
 		map[1]->drop(sword);
 		map[3]->drop(shield);
+		map[5]->hidden_objects.push_back(graal);
 	}
 
 	void random_insert(Character & ch, vector<Environment*>& map){
@@ -92,77 +121,71 @@ void init_map(Environment * & start, vector<Environment*> & map){
 	void init_chars(vector<Character*> & npc, Environment * start,vector<Environment*> & map){
 		Character * trolle = new Troll("Trolle", start);
 		Character * trolla = new Troll("Trolla", start);
+		Character * hunter = new Hunter("Hunter", 40, start, npc.front());
 		random_insert(*trolle,map);
 		random_insert(*trolla,map);
+		random_insert(*hunter,map);
 		npc.push_back(trolle);
 		npc.push_back(trolla);
+		npc.push_back(hunter);
 	}
 
-	void gen_npc_actions(vector<Character*> & npcs, Parser parser){
-		vector<string> allowed_actions = {"say","move","talk","fight"};
+	bool gen_npc_actions(vector<Character*> & npcs, Parser parser){
+		vector<string> allowed_actions = {"say","move","talk","look"};
 		vector<string> tokens;
 		int action;
-		for(Character * npc : npcs){
-			if(npc->is_player())
+		for(auto it = npcs.begin(); it != npcs.end(); ++it){
+			Character * npc = *it;
+			if(!(npc->is_alive())){
+				if(npc->is_player()){
+					//GAME OVER
+					return true;
+				}else{
+					npcs.erase(it);
+					npc->die();
+					return false;
+				}
+			}
+			if(npc->is_player()){
 				continue;
-			action = rand() % allowed_actions.size();
-			tokens.push_back(allowed_actions[action]);
-			parser.parse_cmd(npc,tokens);
-			tokens.clear();
+			}
+			Character * enemy = npc->spot_enemy();
+			if(enemy != NULL){
+				tokens.push_back("fight");
+				tokens.push_back(enemy->name());
+				parser.parse_cmd(npc, tokens);
+				tokens.clear();
+			}else{
+				if(npc->type() == "hunter"){
+					tokens.push_back("move");
+				}else{
+					action = rand() % allowed_actions.size();
+					tokens.push_back(allowed_actions[action]);
+				}
+				parser.parse_cmd(npc,tokens);
+				tokens.clear();
+			}
 		}
+		return false;
 	}
 
 	void split_line(vector<string> & tokens,string cmd){
 			istringstream iss(cmd);
-			copy(istream_iterator<string>(iss), istream_iterator<string>(), back_inserter(tokens)); //Splittar strängen på whitespace
+			copy(istream_iterator<string>(iss), istream_iterator<string>(), back_inserter(tokens)); 
 	}
 
 	void init_player(vector<Character*> & npc, Parser & parser, Environment * & start){
-		/*cout << "Choose class: " << endl;
-		for(int i = 0; i < parser.num_races(); i++){
-			cout << "(" << i+1 << ") : " << parser.races[i] << endl;
-		}
-		cout << ">";
-		
-		string inLine;
-		getline(cin,inLine);
-		int race = atoi(inLine.c_str());
-		
-if(race  == 0 || !parser.legal_race(race)){
-			cout << "Illegal input" << endl;
-			init_player(npc,parser,start);
-			return;
-		}
-		*/	
 		cout << "Choose name" << endl << ">";
 		string name;
 		getline(cin,name);
-		/*switch(race){
-			case 1:
-			{*/
-				Player * player = new Player(name, 100, start, true);
-				npc.push_back(player);
-				start->enter(*player);
-			/*	break;
-			}
-			case 2:
-			{
-				Troll * player = new Troll(name, 100, start, true);
-				npc.push_back(player);
-				start->enter(*player);
-				break;
-			}
-			default:
-				cout << "Someting is horribly wrong. Hide you children, hide your wives cause they are raping everyone up in here!" << endl;
-				init_player(npc, parser, start);
-				return;
-		}*/
+		Player * player = new Player(name, 100, start, true);
+		npc.push_back(player);
+		start->enter(*player);
 		cout << endl;
 		return;
 	}
 
 	bool  global_speak(Character * character, string line){
-		cout << "NPC I SPEAK" << endl;
 		if(line == "")
 			character->speak();
 		else
@@ -171,15 +194,12 @@ if(race  == 0 || !parser.legal_race(race)){
 	}
 	
 	bool global_talk_to(Character * character, string npc){
-		cout << "NPC I TALK TO" << endl;
-		vector<string> tokens;
-		split_line(tokens,npc);
-		character->talk_to(tokens);
+		vector<string> toks;
+		split_line(toks,npc);
+		character->talk_to(toks);
 		return false;
 	}
 	bool global_move(Character * character, string direction){
-		if(!character->is_player())
-			cout << "NPC I MOVE" << endl;
 		character->go(direction);
 		return true;
 	}
@@ -195,7 +215,6 @@ if(race  == 0 || !parser.legal_race(race)){
 		return false;
 	}
 	bool global_fight(Character * character, string target){
-		cout << "NPC I FIGHT" << endl;
 		character->fight(target);
 		return true;
 	}
@@ -215,5 +234,9 @@ if(race  == 0 || !parser.legal_race(race)){
 	
 	bool global_dig(Character * character, string a){
 		character->dig();
+		return true;
+	}
+	bool global_use(Character * character, string item){
+		character->use(item);
 		return true;
 	}

@@ -19,6 +19,7 @@ namespace game {
 		
 		vector<Object*> hidden_objects;
 		map<string, Environment*> exits;
+		string n;
 		string descr;
 		vector<Object*> objects;
 		vector<Character*> characters;
@@ -26,9 +27,11 @@ namespace game {
 
 		Object * hidden_items();
 		Character * is_character(string target);
-		bool find_object(string object);
+		Object * find_object(string object);
 		void print_characters();
 		int get_id() const;
+		string name() const;
+		void set_description(string description);
 		string description() const;
 		bool set_neighbour(string dir, Environment * env);
 		Environment & neighbour(string direction);
