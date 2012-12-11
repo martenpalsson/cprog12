@@ -35,7 +35,7 @@ namespace game{
 		return false;
 	}
 
-	Character * Environment::is_character(string target){
+	Character * Environment::is_character(string target) const{
 		for(auto it = characters.begin(); it != characters.end(); it++){
 			if((*it)->name() == target){
 				return *it;
@@ -56,7 +56,7 @@ namespace game{
 		return descr;
 	}
 
-	void Environment::print_characters(){
+	void Environment::print_characters() const{
 		if(characters.size() > 1){
 			cout << "Current residents of " << name() << endl;
 			for(unsigned int i = 0; i < characters.size(); i++){
@@ -124,7 +124,9 @@ namespace game{
 
 	Object * Environment::hidden_items(){
 		if(hidden_objects.size() > 0){
-			return hidden_objects.front();
+			Object * tmp = hidden_objects.front();
+			hidden_objects.erase(hidden_objects.begin());
+			return tmp;
 		}
 		return NULL;
 	}
@@ -133,7 +135,7 @@ namespace game{
 		objects.push_back(obj);
 	}
 
-	Object * Environment::find_object(string object){
+	Object * Environment::find_object(string object) const{
 		for(auto it=objects.begin(); it != objects.end(); it++){
 			if((*it)->name() == object){
 				return *it;

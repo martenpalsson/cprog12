@@ -11,14 +11,6 @@ namespace game {
 	//Alla commands
 	map<string, function<bool(Character*,string)>> Parser::cmds;
 	
-	vector<string> Parser::races = {"Boxer", "Troll"};
-
-	vector<string> Parser::words = {"to", "at", "with"};
-
-	bool Parser::legal_race(int race){
-		return race > 0 && race <= (int) races.size();
-	}
-	
 	void Parser::init_cmds(map<string, function<bool(Character*, string)>> & cmds){
 			cmds["speak"] = global_speak;
 			cmds["dig"] = global_dig;
@@ -41,18 +33,12 @@ namespace game {
 			cmds["take"] = global_pick_up;
 			cmds["inv"] = global_inv;
 			cmds["items"] = global_inv;
-//			cmds["exit"] = exit;
-//			cmds["help"] = help;
-	}
-
-	int Parser::num_races(){
-		return races.size();
 	}
 
 	void Parser::intro(){
 		cout << "--------------------------------" << endl;
-		cout << "\tFind Trolle" << endl;
-		cout << "\tAnd kill him.." << endl;
+		cout << "\tFind the Graal," << endl;
+		cout << "\tAnd avoid the hunter.." << endl;
 		cout << "--------------------------------" << endl;
 		cout << endl;
 	}
@@ -93,15 +79,6 @@ namespace game {
 		}
 	}
 	
-	bool Parser::isWord(string word){
-		for(unsigned int i = 0; i < words.size(); i++){
-			if(word == words[i]){
-				return true;
-			}
-		}
-		return false;
-	}
-			
 	void Parser::help(){
 		cout << endl;
 		cout << "Available commands: " << endl;

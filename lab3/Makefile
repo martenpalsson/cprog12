@@ -375,6 +375,54 @@ src/player.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
 
+src/potion.o: src/potion.cpp.o
+.PHONY : src/potion.o
+
+# target to build an object file
+src/potion.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/potion.cpp.o
+.PHONY : src/potion.cpp.o
+
+src/potion.i: src/potion.cpp.i
+.PHONY : src/potion.i
+
+# target to preprocess a source file
+src/potion.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/potion.cpp.i
+.PHONY : src/potion.cpp.i
+
+src/potion.s: src/potion.cpp.s
+.PHONY : src/potion.s
+
+# target to generate assembly for a file
+src/potion.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/potion.cpp.s
+.PHONY : src/potion.cpp.s
+
+src/shield.o: src/shield.cpp.o
+.PHONY : src/shield.o
+
+# target to build an object file
+src/shield.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/shield.cpp.o
+.PHONY : src/shield.cpp.o
+
+src/shield.i: src/shield.cpp.i
+.PHONY : src/shield.i
+
+# target to preprocess a source file
+src/shield.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/shield.cpp.i
+.PHONY : src/shield.cpp.i
+
+src/shield.s: src/shield.cpp.s
+.PHONY : src/shield.s
+
+# target to generate assembly for a file
+src/shield.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/shield.cpp.s
+.PHONY : src/shield.cpp.s
+
 src/troll.o: src/troll.cpp.o
 .PHONY : src/troll.o
 
@@ -398,6 +446,30 @@ src/troll.s: src/troll.cpp.s
 src/troll.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/troll.cpp.s
 .PHONY : src/troll.cpp.s
+
+src/weapon.o: src/weapon.cpp.o
+.PHONY : src/weapon.o
+
+# target to build an object file
+src/weapon.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/weapon.cpp.o
+.PHONY : src/weapon.cpp.o
+
+src/weapon.i: src/weapon.cpp.i
+.PHONY : src/weapon.i
+
+# target to preprocess a source file
+src/weapon.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/weapon.cpp.i
+.PHONY : src/weapon.cpp.i
+
+src/weapon.s: src/weapon.cpp.s
+.PHONY : src/weapon.s
+
+# target to generate assembly for a file
+src/weapon.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/weapon.cpp.s
+.PHONY : src/weapon.cpp.s
 
 # Help Target
 help:
@@ -441,9 +513,18 @@ help:
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"
+	@echo "... src/potion.o"
+	@echo "... src/potion.i"
+	@echo "... src/potion.s"
+	@echo "... src/shield.o"
+	@echo "... src/shield.i"
+	@echo "... src/shield.s"
 	@echo "... src/troll.o"
 	@echo "... src/troll.i"
 	@echo "... src/troll.s"
+	@echo "... src/weapon.o"
+	@echo "... src/weapon.i"
+	@echo "... src/weapon.s"
 .PHONY : help
 
 

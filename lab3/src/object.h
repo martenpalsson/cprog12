@@ -11,10 +11,9 @@ namespace game{
 		string n;
 		string t;
 		string d;
-		int w;
 		Character * owner;
 
-		Object(string name, string type, string description, int weight);
+		Object(string name, string type, string description);
 		bool operator==(const Object & oref);
 		string name() const;
 		string type() const;

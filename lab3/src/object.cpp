@@ -5,11 +5,10 @@ using namespace std;
 
 namespace game{
 	
-	Object::Object(string name, string type, string description, int weight){
+	Object::Object(string name, string type, string description){
 		n = name;
 		t = type;
 		d = description;
-		w = weight;
 		owner = NULL;
 	}
 	
@@ -30,9 +29,6 @@ namespace game{
 		return d;
 	}
 
-	int Object::weight() const{ 
-		return w;
-	}
 	void Object::set_owner(Character * o){
 		owner = o;
 	}
@@ -43,6 +39,9 @@ namespace game{
 			}
 			if(type() == "shield"){
 				owner->set_shield(this);
+			}
+			if(type() == "potion"){
+				owner->set_health(20);
 			}
 		} else {
 			cout << "You don't have this item.." << endl;

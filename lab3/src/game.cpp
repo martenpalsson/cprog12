@@ -24,9 +24,8 @@ int main(){
 	vector<string> tokens;
 	string command = "";
 	Character * player = npc.front();
-	bool dead = false;
 
-	while(!dead){
+	while(true){
 		bool pf = false;
 		while(!pf){
 			tokens.clear();
@@ -40,7 +39,7 @@ int main(){
 			pf = parser.parse_cmd(player,tokens);
 		}
 		//Här utför npc:erna sina moves
-		dead = gen_npc_actions(npc,parser);
+		gen_npc_actions(npc,parser);
 		cout << endl;
 		if(!(player->is_alive())){
 			cout << "Game Over" << endl;
@@ -62,7 +61,7 @@ void init_map(Environment * & start, vector<Environment*> & map){
 	Forest * forest = new Forest("Forest",1);
 	Forest * western_forest = new Forest("Western Forest",2);
 	House * old_house = new House("Old House",3);
-	House * hidden_room = new House("Secret room", 4);
+	Forest * hidden_room = new Forest("Secret room", 4);
 	House * castle = new House("Castle", 5);
 
 	home->set_neighbour("east", forest);
@@ -103,11 +102,15 @@ void init_map(Environment * & start, vector<Environment*> & map){
 	}
 
 	void init_objects(vector<Environment*> & map){
-		Object * graal = new Object("Graal", "object", "A fine Graal", 0);
-		Object * sword = new Object("Sword", "weapon", "A fine sword", 5);
-		Object * shield = new Object("Shield", "shield", "A fine shield", 6);
+		Object * graal = new Object("Graal", "object", "A fine Graal");
+		Object * sword = new Weapon("Sword", "weapon", "A fine sword", 10);
+		Object * shield = new Shield("Shield", "shield", "A fine shield", 10);
+		Object * apple = new Potion("Apple", "potion", "A fine apple", 40);
+		Object * badass_sword = new Weapon("Badass Sword", "weapon", "A fine badass sword", 30);
 		map[1]->drop(sword);
 		map[3]->drop(shield);
+		map[4]->drop(apple);
+		map[2]->hidden_objects.push_back(badass_sword);
 		map[5]->hidden_objects.push_back(graal);
 	}
 
@@ -130,24 +133,19 @@ void init_map(Environment * & start, vector<Environment*> & map){
 		npc.push_back(hunter);
 	}
 
-	bool gen_npc_actions(vector<Character*> & npcs, Parser parser){
+	void gen_npc_actions(vector<Character*> & npcs, Parser parser){
 		vector<string> allowed_actions = {"say","move","talk","look"};
 		vector<string> tokens;
 		int action;
 		for(auto it = npcs.begin(); it != npcs.end(); ++it){
 			Character * npc = *it;
-			if(!(npc->is_alive())){
-				if(npc->is_player()){
-					//GAME OVER
-					return true;
-				}else{
-					npcs.erase(it);
-					npc->die();
-					return false;
-				}
-			}
 			if(npc->is_player()){
 				continue;
+			}
+			if(!(npc->is_alive())){
+					npcs.erase(it);
+					npc->die();
+					return;
 			}
 			Character * enemy = npc->spot_enemy();
 			if(enemy != NULL){
@@ -166,7 +164,7 @@ void init_map(Environment * & start, vector<Environment*> & map){
 				tokens.clear();
 			}
 		}
-		return false;
+		return;
 	}
 
 	void split_line(vector<string> & tokens,string cmd){

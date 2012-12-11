@@ -30,7 +30,10 @@ CMakeFiles/game.dir/src/game.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/potion.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/shield.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/weapon.h
 CMakeFiles/game.dir/src/house.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
@@ -74,7 +77,10 @@ CMakeFiles/game.dir/src/parser.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/potion.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/shield.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/weapon.h
 CMakeFiles/game.dir/src/player.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
@@ -82,6 +88,18 @@ CMakeFiles/game.dir/src/player.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.h
+CMakeFiles/game.dir/src/potion.cpp.o
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/potion.cpp
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/potion.h
+CMakeFiles/game.dir/src/shield.cpp.o
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/shield.cpp
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/shield.h
 CMakeFiles/game.dir/src/troll.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
@@ -89,3 +107,9 @@ CMakeFiles/game.dir/src/troll.cpp.o
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.cpp
  /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.h
+CMakeFiles/game.dir/src/weapon.cpp.o
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/weapon.cpp
+ /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/weapon.h

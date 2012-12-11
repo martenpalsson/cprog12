@@ -6,6 +6,9 @@
 #include "environment.h"
 #include "object.h"
 #include "hunter.h"
+#include "shield.h"
+#include "potion.h"
+#include "weapon.h"
 #include "parser.h"
 #include "forest.h"
 #include "house.h"
@@ -23,7 +26,7 @@ void init_chars(vector<Character*> & characters, Environment * start, vector<Env
 
 void init_game(Parser parser, vector<Character*> & characters, Environment * & start, vector<Environment*> & map);
 
-bool gen_npc_actions(vector<Character*> & npc, Parser parser);
+void gen_npc_actions(vector<Character*> & npc, Parser parser);
 
 void split_line(vector<string> & tokens, string cmd);
 

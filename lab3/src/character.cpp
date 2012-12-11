@@ -27,6 +27,9 @@ namespace game{
 		alive = cref.is_alive();
 		return *this;
 	}
+	void Character::set_health(int modifier){
+		hp += modifier;
+	}
 	
 	void Character::set_pos(Environment * to){
 		curr_pos = to;
@@ -154,7 +157,7 @@ namespace game{
 		}else{
 			damage = 5;
 			if(get_weapon() != NULL)
-				damage += 15;
+				damage += 20;
 		}
 		bool defeated = enemy->take_damage(this,damage);
 		if(defeated){

@@ -38,6 +38,7 @@ class Environment;
 		void set_weapon(Object * weapon);
 		bool attack(Character * enemy);
 		void set_shield(Object * shield);
+		void set_health(int modifier);
 		void go(string direction);
 		Environment * get_pos();
 		void speak(string line);

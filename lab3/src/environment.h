@@ -12,35 +12,34 @@ namespace game {
 	class Character;
 	struct Environment{
 		
-		bool pp;
 		Environment & operator=(const Environment & e);
-		//Environment(string description, int id);
 		bool operator==(const Environment & env);
 		
+		int id;
 		bool dig;
-		vector<Object*> hidden_objects;
-		map<string, Environment*> exits;
+		bool pp;
 		string n;
 		string descr;
 		vector<Object*> objects;
 		vector<Character*> characters;
-		int id;
+		vector<Object*> hidden_objects;
+		map<string, Environment*> exits;
 
-		Object * hidden_items();
-		Character * is_character(string target);
-		Object * find_object(string object);
-		void print_characters();
-		int get_id() const;
-		string name() const;
 		void set_description(string description);
-		string description() const;
-		bool set_neighbour(string dir, Environment * env);
-		Environment & neighbour(string direction);
+		void print_characters() const;
 		void directions() const;
 		void enter(Character & character);
 		void leave(Character & character);
-		Object * pick_up(string object);
 		void drop(Object * obj);
+		bool set_neighbour(string dir, Environment * env);
+		int get_id() const;
+		string name() const;
+		string description() const;
+		Object * hidden_items();
+		Object * pick_up(string object);
+		Object * find_object(string object) const;
+		Character * is_character(string target) const;
+		Environment & neighbour(string direction);
 		virtual void look(string direction) = 0;
 		virtual bool diggable() = 0;
 	};

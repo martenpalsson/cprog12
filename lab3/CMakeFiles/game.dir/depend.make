@@ -29,7 +29,10 @@ CMakeFiles/game.dir/src/game.cpp.o: src/monster.h
 CMakeFiles/game.dir/src/game.cpp.o: src/object.h
 CMakeFiles/game.dir/src/game.cpp.o: src/parser.h
 CMakeFiles/game.dir/src/game.cpp.o: src/player.h
+CMakeFiles/game.dir/src/game.cpp.o: src/potion.h
+CMakeFiles/game.dir/src/game.cpp.o: src/shield.h
 CMakeFiles/game.dir/src/game.cpp.o: src/troll.h
+CMakeFiles/game.dir/src/game.cpp.o: src/weapon.h
 
 CMakeFiles/game.dir/src/house.cpp.o: src/character.h
 CMakeFiles/game.dir/src/house.cpp.o: src/environment.h
@@ -73,7 +76,10 @@ CMakeFiles/game.dir/src/parser.cpp.o: src/object.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/parser.cpp
 CMakeFiles/game.dir/src/parser.cpp.o: src/parser.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/player.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/potion.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/shield.h
 CMakeFiles/game.dir/src/parser.cpp.o: src/troll.h
+CMakeFiles/game.dir/src/parser.cpp.o: src/weapon.h
 
 CMakeFiles/game.dir/src/player.cpp.o: src/character.h
 CMakeFiles/game.dir/src/player.cpp.o: src/environment.h
@@ -82,10 +88,28 @@ CMakeFiles/game.dir/src/player.cpp.o: src/object.h
 CMakeFiles/game.dir/src/player.cpp.o: src/player.cpp
 CMakeFiles/game.dir/src/player.cpp.o: src/player.h
 
+CMakeFiles/game.dir/src/potion.cpp.o: src/character.h
+CMakeFiles/game.dir/src/potion.cpp.o: src/environment.h
+CMakeFiles/game.dir/src/potion.cpp.o: src/object.h
+CMakeFiles/game.dir/src/potion.cpp.o: src/potion.cpp
+CMakeFiles/game.dir/src/potion.cpp.o: src/potion.h
+
+CMakeFiles/game.dir/src/shield.cpp.o: src/character.h
+CMakeFiles/game.dir/src/shield.cpp.o: src/environment.h
+CMakeFiles/game.dir/src/shield.cpp.o: src/object.h
+CMakeFiles/game.dir/src/shield.cpp.o: src/shield.cpp
+CMakeFiles/game.dir/src/shield.cpp.o: src/shield.h
+
 CMakeFiles/game.dir/src/troll.cpp.o: src/character.h
 CMakeFiles/game.dir/src/troll.cpp.o: src/environment.h
 CMakeFiles/game.dir/src/troll.cpp.o: src/monster.h
 CMakeFiles/game.dir/src/troll.cpp.o: src/object.h
 CMakeFiles/game.dir/src/troll.cpp.o: src/troll.cpp
 CMakeFiles/game.dir/src/troll.cpp.o: src/troll.h
+
+CMakeFiles/game.dir/src/weapon.cpp.o: src/character.h
+CMakeFiles/game.dir/src/weapon.cpp.o: src/environment.h
+CMakeFiles/game.dir/src/weapon.cpp.o: src/object.h
+CMakeFiles/game.dir/src/weapon.cpp.o: src/weapon.cpp
+CMakeFiles/game.dir/src/weapon.cpp.o: src/weapon.h
 

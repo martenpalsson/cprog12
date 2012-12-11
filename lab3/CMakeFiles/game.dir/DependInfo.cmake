@@ -15,7 +15,10 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/object.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/parser.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/player.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/player.cpp.o"
+  "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/potion.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/potion.cpp.o"
+  "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/shield.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/shield.cpp.o"
   "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/troll.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/troll.cpp.o"
+  "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/weapon.cpp" "/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/CMakeFiles/game.dir/src/weapon.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

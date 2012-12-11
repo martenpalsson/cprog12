@@ -10,7 +10,7 @@ namespace game{
 		n = name;
 		set_pos(env);
 		alive = true;
-		weapon = new Object("Bow", "bow", "a fine bow", 40);
+		weapon = new Object("Bow", "bow", "a fine bow");
 		shield = NULL;
 		player = false;
 		t = "hunter";
