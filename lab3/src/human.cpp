@@ -98,13 +98,17 @@ namespace game{
 
 
 	void Human::dig(){
-		Object * item = get_pos()->hidden_items();
-		if(item != NULL){
-			items.push_back(item);
-			cout << "Found: " << item->name() << endl;
-			return;
+		if(get_pos()->diggable()){
+			Object * item = get_pos()->hidden_items();
+			if(item != NULL){
+				items.push_back(item);
+				cout << "Found: " << item->name() << endl;
+				return;
+			}
+			cout << "Nothing here.. " << endl;
+		}else{
+			cout << "Can't dig indoors.." << endl;
 		}
-		cout << "Nothing here.. " << endl;
 	}
 
 	void Human::print_items(){

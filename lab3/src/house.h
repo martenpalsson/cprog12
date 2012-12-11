@@ -8,12 +8,11 @@
 using namespace std;
 namespace game{
 	struct House : public Environment {
-
+		bool dig;
 		House(string description, int id);
-
+		
+		bool diggable();
 		void look(string direction);
-		int huntability();
-		bool dig(Object & container);
 	};
 };
 #endif

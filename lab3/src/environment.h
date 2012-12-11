@@ -17,6 +17,7 @@ namespace game {
 		//Environment(string description, int id);
 		bool operator==(const Environment & env);
 		
+		bool dig;
 		vector<Object*> hidden_objects;
 		map<string, Environment*> exits;
 		string n;
@@ -40,9 +41,8 @@ namespace game {
 		void leave(Character & character);
 		Object * pick_up(string object);
 		void drop(Object * obj);
-		virtual int huntability() = 0;
 		virtual void look(string direction) = 0;
-		virtual bool dig(Object & container) = 0;
+		virtual bool diggable() = 0;
 	};
 };
 		

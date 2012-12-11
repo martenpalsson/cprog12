@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.cpp
+string
+-
+iostream
+-
+vector
+-
+character.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 string
 -
@@ -15,6 +25,20 @@ environment.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 object.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.cpp
+environment.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
+object.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+character.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
+map
+-
+string
+-
+iostream
+-
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 character.h
@@ -28,6 +52,14 @@ map
 vector
 -
 
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/forest.cpp
+forest.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/forest.h
+iostream
+-
+string
+-
+
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/forest.h
 environment.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
@@ -35,24 +67,6 @@ string
 -
 iostream
 -
-
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.cpp
-iostream
--
-string
--
-vector
--
-time.h
--
-sstream
--
-iterator
--
-algorithm
--
-game.h
-/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.h
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.h
 character.h
@@ -78,6 +92,14 @@ string
 vector
 -
 
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.cpp
+house.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
+iostream
+-
+string
+-
+
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/house.h
 environment.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
@@ -98,6 +120,16 @@ vector
 string
 -
 
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.cpp
+hunter.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.h
+vector
+-
+string
+-
+iostream
+-
+
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/hunter.h
 monster.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/monster.h
@@ -112,12 +144,36 @@ vector
 string
 -
 
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.cpp
+string
+-
+object.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
+iostream
+-
+
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/object.h
 character.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/character.h
 environment.h
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/environment.h
 string
+-
+
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.cpp
+parser.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
+game.h
+/afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/game.h
+vector
+-
+sstream
+-
+string
+-
+iostream
+-
+functional
 -
 
 /afs/nada.kth.se/home/z/u1xpi8dz/kurser/cprog12/lab3/src/parser.h
