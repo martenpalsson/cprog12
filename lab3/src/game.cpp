@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <time.h>
@@ -68,13 +69,13 @@ void init_map(Environment * & start, vector<Environment*> & map){
 	home->set_neighbour("north", western_forest);
 	forest->set_neighbour("west", home);
 	forest->set_neighbour("north", old_house);
+	forest->set_neighbour("east", castle);
 	western_forest->set_neighbour("east", old_house);
 	western_forest->set_neighbour("south", home);
+	western_forest->set_neighbour("west", hidden_room);
 	old_house->set_neighbour("west", western_forest);
 	old_house->set_neighbour("south", forest);
-	western_forest->set_neighbour("west", hidden_room);
 	hidden_room->set_neighbour("east", home);
-	forest->set_neighbour("east", castle);
 	castle->set_neighbour("west", forest);
 
 	home->set_description("This is your home");
@@ -94,11 +95,28 @@ void init_map(Environment * & start, vector<Environment*> & map){
 
 
 	void init_game(Parser parser,vector<Character*> & npc,Environment * & start,vector<Environment*> & map){
+		read_file();
 		init_map(start,map);
 		init_player(npc, parser, start);
 		init_chars(npc,start,map);
 		init_objects(map);
 		return;
+	}
+
+	bool read_file(){
+		string line;
+		ifstream file("default.txt");
+		if(file.is_open()){
+			while(file.good()){
+				getline(file,line);
+				cout << line << endl;
+			}
+			file.close();
+		}else{
+			cout << "Can't open file.." << endl;
+			return false;
+		}
+		return true;
 	}
 
 	void init_objects(vector<Environment*> & map){

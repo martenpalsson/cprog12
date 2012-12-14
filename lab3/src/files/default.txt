@@ -1,0 +1,60 @@
+MAP
+6
+House home 
+Forest forest
+Forest "Western Forest"
+House "Old House"
+House Castle
+
+Home 
+east Forest 
+north "Western Forest"
+
+Forest 
+west Home 
+north "Old House"
+east Castle
+
+Western Forest
+east "Old House"
+south Home
+west "Secret Room"
+
+"Old House"
+west "Western Forest"
+south forest
+
+"Secret Room"
+east Home
+
+Castle
+west Forest
+
+Home "This is your home"
+Forest "This is a fine forest"
+Western "Forest A dark forest"
+Old House "An old house, seems abondoned"
+Castle "A standard castle"
+
+//start
+Home
+
+ACTORS
+3
+Troll Trolle 3
+Troll Trolla 4
+Hunter Hunter 1
+
+//OBJECTS
+5
+//Typ, namn, besrivning, värde, position
+Object Graal "A fine Graal" 0 5
+Weapon Sword "A fine sword" 10 1
+Shield Shield "A fine shield" 10 3
+Potion Apple "A fine apple" 40 4
+Weapon "Badass sword" "A fine badass sword" 30 2
+
+
+
+
+

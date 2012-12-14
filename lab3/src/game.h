@@ -22,6 +22,8 @@ using namespace std;
 using namespace game;
 void init_map(Environment & start);
 
+bool read_file();
+
 void init_chars(vector<Character*> & characters, Environment * start, vector<Environment*> & map);
 
 void init_game(Parser parser, vector<Character*> & characters, Environment * & start, vector<Environment*> & map);
